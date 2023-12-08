@@ -20,7 +20,7 @@ public class Login implements ActionListener, Ilogin {
     private JLabel title, title1;
     private JLabel shortNote, loginRemainder;
     private JButton loginButton1, signUpButton, exitButton, adminButton;
-    private JButton loginButton2, forgotButton;
+    private JButton loginButton2, forgotPassB;
     private JButton previousButton;
 
 
@@ -81,6 +81,7 @@ public class Login implements ActionListener, Ilogin {
         signUpButton.setFont(BodyFont);
         signUpButton.setBounds(380, 180, 80,25);
         signUpButton.setBorder(new LineBorder(Color.decode("#254C53"), 2));
+        //next 3 line making background transparent for the button
         signUpButton.setBackground(new Color(0, 0, 0, 0)); // RGB values are 0 and alpha is 0
         signUpButton.setOpaque(false);
         signUpButton.setContentAreaFilled(false);
@@ -93,7 +94,6 @@ public class Login implements ActionListener, Ilogin {
         exitButton.setFont(BodyFont);
         exitButton.setBounds(330, 220, 70, 25);
         exitButton.setBorder(new LineBorder(Color.decode("#254C53"), 2));
-        //makes background transparent
         exitButton.setBackground(new Color(0, 0, 0, 0)); 
         exitButton.setOpaque(false);
         exitButton.setContentAreaFilled(false);
@@ -106,7 +106,6 @@ public class Login implements ActionListener, Ilogin {
         adminButton.setFont(BodyFont);
         adminButton.setBounds(700, 10, 70, 25);
         adminButton.setBorder(new LineBorder(Color.decode("#254C53"), 2));
-        //makes background transparent
         adminButton.setBackground(new Color(0, 0, 0, 0)); 
         adminButton.setOpaque(false);
         adminButton.setContentAreaFilled(false);
@@ -114,24 +113,47 @@ public class Login implements ActionListener, Ilogin {
         adminButton.addActionListener(this);
         frame.add(adminButton);
 
-
+        //login button after clicking login
         loginButton2 = new JButton("Login");
         loginButton2.setFont(BodyFont);
+        loginButton2.setForeground(Color.decode("#E759E4"));
         loginButton2.setBounds(470, 180, 70,25);
         loginButton2.setBorder(new LineBorder(Color.decode("#254C53"), 2));
+        loginButton2.setBackground(new Color(0, 0, 0, 0));
+        loginButton2.setOpaque(false);
+        loginButton2.setContentAreaFilled(false);
+        loginButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        loginButton2.setVisible(false);
+        loginButton2.addActionListener(this);
+        frame.add(loginButton2);
+
 
         previousButton = new JButton("Back");
         previousButton.setForeground(Color.decode("#E70909"));
         previousButton.setFont(BodyFont);
         previousButton.setBounds(610, 10, 70, 25);
         previousButton.setBorder(new LineBorder(Color.decode("#254C53"), 2));
-        //makes background transparent
         previousButton.setBackground(new Color(0, 0, 0, 0)); 
         previousButton.setOpaque(false);
         previousButton.setContentAreaFilled(false);
         previousButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        previousButton.setVisible(false);
         previousButton.addActionListener(this);
         frame.add(previousButton);
+
+        //forgot password button
+        forgotPassB = new JButton("Forgot Password?");
+        forgotPassB.setForeground(Color.decode("#E70909"));
+        forgotPassB.setFont(BodyFont);
+        forgotPassB.setBounds(610, 50, 70, 25);
+        forgotPassB.setBorder(new LineBorder(Color.decode("#254C53"), 2));
+        forgotPassB.setBackground(new Color(0, 0, 0, 0)); 
+        forgotPassB.setOpaque(false);
+        forgotPassB.setContentAreaFilled(false);
+        forgotPassB.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        forgotPassB.setVisible(false);
+        forgotPassB.addActionListener(this);
+        frame.add(forgotPassB);
     
         
         frame.setSize(800, 600);
@@ -148,17 +170,22 @@ public class Login implements ActionListener, Ilogin {
                 if(e.getSource() == loginButton1){
                 loginRemainder.setVisible(false);
                 loginButton1.setVisible(false);
-                signUpButton.setVisible(false);  
+                signUpButton.setVisible(false);
+                shortNote.setVisible(false);
+                loginButton2.setVisible(true);
+                previousButton.setVisible(true);
+                forgotPassB.setVisible(true);
                     }   
                 else if (e.getSource() == signUpButton) {
-                
+                System.exit(0); //temporarily
                     }
                 else if (e.getSource() == exitButton) {
                 System.exit(0);
                 
                     }
                 else if (e.getSource() == adminButton){
-                frame.setVisible(false);
+                // frame.setVisible(false);
+                System.exit(0); //temporarily
                 //new AdminLogin();
                     }   
                 
