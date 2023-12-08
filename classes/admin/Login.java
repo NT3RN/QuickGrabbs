@@ -20,8 +20,8 @@ public class Login implements ActionListener, Ilogin {
     private JLabel title, title1;
     private JLabel shortNote, loginRemainder;
     private JButton loginButton1, signUpButton, exitButton, adminButton;
-    private JButton previousButton;
     private JButton loginButton2, forgotButton;
+    private JButton previousButton;
 
 
     Font TitleFont = new Font("Ink Free", Font.BOLD, 50);
@@ -57,6 +57,7 @@ public class Login implements ActionListener, Ilogin {
         shortNote.setBounds(300, 80, 380,60);
         frame.add(shortNote);
 
+        //text that remainds to log in or Sign up
         loginRemainder = new JLabel("Login or Sign Up to Continue");
         loginRemainder.setForeground(Color.decode("#85C93C"));
         loginRemainder.setFont(BodyFont);
@@ -84,7 +85,7 @@ public class Login implements ActionListener, Ilogin {
         signUpButton.setOpaque(false);
         signUpButton.setContentAreaFilled(false);
         signUpButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        //need to add action listeners
+        signUpButton.addActionListener(this);
         frame.add(signUpButton);
 
         exitButton = new JButton("Exit");
@@ -93,7 +94,7 @@ public class Login implements ActionListener, Ilogin {
         exitButton.setBounds(330, 220, 70, 25);
         exitButton.setBorder(new LineBorder(Color.decode("#254C53"), 2));
         //makes background transparent
-        exitButton.setBackground(new Color(0, 0, 0, 0)); // RGB values are 0 and alpha is 0
+        exitButton.setBackground(new Color(0, 0, 0, 0)); 
         exitButton.setOpaque(false);
         exitButton.setContentAreaFilled(false);
 		exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -106,11 +107,31 @@ public class Login implements ActionListener, Ilogin {
         adminButton.setBounds(700, 10, 70, 25);
         adminButton.setBorder(new LineBorder(Color.decode("#254C53"), 2));
         //makes background transparent
-        adminButton.setBackground(new Color(0, 0, 0, 0)); // RGB values are 0 and alpha is 0
+        adminButton.setBackground(new Color(0, 0, 0, 0)); 
         adminButton.setOpaque(false);
         adminButton.setContentAreaFilled(false);
-        //need to add action listeners
+        adminButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        adminButton.addActionListener(this);
         frame.add(adminButton);
+
+
+        loginButton2 = new JButton("Login");
+        loginButton2.setFont(BodyFont);
+        loginButton2.setBounds(470, 180, 70,25);
+        loginButton2.setBorder(new LineBorder(Color.decode("#254C53"), 2));
+
+        previousButton = new JButton("Back");
+        previousButton.setForeground(Color.decode("#E70909"));
+        previousButton.setFont(BodyFont);
+        previousButton.setBounds(610, 10, 70, 25);
+        previousButton.setBorder(new LineBorder(Color.decode("#254C53"), 2));
+        //makes background transparent
+        previousButton.setBackground(new Color(0, 0, 0, 0)); 
+        previousButton.setOpaque(false);
+        previousButton.setContentAreaFilled(false);
+        previousButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        previousButton.addActionListener(this);
+        frame.add(previousButton);
     
         
         frame.setSize(800, 600);
@@ -138,7 +159,7 @@ public class Login implements ActionListener, Ilogin {
                     }
                 else if (e.getSource() == adminButton){
                 frame.setVisible(false);
-                //new Admin();
+                //new AdminLogin();
                     }   
                 
         }
