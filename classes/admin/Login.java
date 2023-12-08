@@ -20,7 +20,8 @@ public class Login implements ActionListener, Ilogin {
     private JLabel title, title1;
     private JLabel shortNote, loginRemainder;
     private JButton loginButton1, signUpButton, exitButton, adminButton;
-    private JButton 
+    private JButton previousButton;
+    private JButton loginButton2, forgotButton;
 
 
     Font TitleFont = new Font("Ink Free", Font.BOLD, 50);
@@ -30,7 +31,7 @@ public class Login implements ActionListener, Ilogin {
         frame = new JFrame("Quick Grabbs");
     
         
-        ImageIcon framelogo = new ImageIcon("icons/frame_logo.png");
+        ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
         frame.setIconImage(framelogo.getImage());
 
 
@@ -96,7 +97,7 @@ public class Login implements ActionListener, Ilogin {
         exitButton.setOpaque(false);
         exitButton.setContentAreaFilled(false);
 		exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		//need to add action listeners
+		exitButton.addActionListener(this);
         frame.add(exitButton);
 
         adminButton = new JButton("Admin");
@@ -119,31 +120,26 @@ public class Login implements ActionListener, Ilogin {
         frame.setLayout(null);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-
+        
+    }
         @Override
         public void actionPerformed(ActionEvent e) {
-            if(e.getSource() == loginButton1){
+                if(e.getSource() == loginButton1){
                 loginRemainder.setVisible(false);
                 loginButton1.setVisible(false);
                 signUpButton.setVisible(false);  
-            }
-            else if (e.getSource() == signUpButton) {
+                    }   
+                else if (e.getSource() == signUpButton) {
                 
-            }
-            else if (e.getSource() == exitButton) {
+                    }
+                else if (e.getSource() == exitButton) {
                 System.exit(0);
                 
-            }
-            else if (e.getSource() == adminButton){
+                    }
+                else if (e.getSource() == adminButton){
                 frame.setVisible(false);
-                new Admin();
-            }
+                //new Admin();
+                    }   
                 
-            }
-            
         }
-    }
-
-
 }
