@@ -32,6 +32,7 @@ public class Login implements ActionListener, Ilogin {
 
     Font TitleFont = new Font("Ink Free", Font.BOLD, 50);
     Font BodyFont = new Font("Grandview", Font.PLAIN, 20);
+    Font DefaultFont = new Font("Grandview", Font.PLAIN, 15);
 
     public Login(){
         frame = new JFrame("Quick Grabbs");
