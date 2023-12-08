@@ -1,4 +1,4 @@
-package classes;
+package classes.admin;
 import interfaces.*;
 import java.awt.*;
 import javax.swing.*;
