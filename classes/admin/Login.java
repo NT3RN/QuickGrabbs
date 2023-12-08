@@ -1,9 +1,12 @@
 package classes.admin;
+import interfaces.*;
 
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,11 +14,13 @@ import javax.swing.JLabel;
 import javax.swing.border.LineBorder;
 
 
-public class Login {
+
+public class Login implements ActionListener, Ilogin {
     private JFrame frame;
     private JLabel title, title1;
     private JLabel shortNote, loginRemainder;
-    private JButton loginButton1, signUpButton, exitButton;
+    private JButton loginButton1, signUpButton, exitButton, adminButton;
+    private JButton 
 
 
     Font TitleFont = new Font("Ink Free", Font.BOLD, 50);
@@ -66,7 +71,7 @@ public class Login {
         loginButton1.setOpaque(false);
         loginButton1.setContentAreaFilled(false);
         loginButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        //need to add action listeners
+        loginButton1.addActionListener(this);
         frame.add(loginButton1);
         
         signUpButton = new JButton("Sign Up");
@@ -93,6 +98,18 @@ public class Login {
 		exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		//need to add action listeners
         frame.add(exitButton);
+
+        adminButton = new JButton("Admin");
+        adminButton.setForeground(Color.decode("#E70909"));
+        adminButton.setFont(BodyFont);
+        adminButton.setBounds(700, 10, 70, 25);
+        adminButton.setBorder(new LineBorder(Color.decode("#254C53"), 2));
+        //makes background transparent
+        adminButton.setBackground(new Color(0, 0, 0, 0)); // RGB values are 0 and alpha is 0
+        adminButton.setOpaque(false);
+        adminButton.setContentAreaFilled(false);
+        //need to add action listeners
+        frame.add(adminButton);
     
         
         frame.setSize(800, 600);
@@ -102,6 +119,30 @@ public class Login {
         frame.setLayout(null);
         frame.setLocationRelativeTo(null);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if(e.getSource() == loginButton1){
+                loginRemainder.setVisible(false);
+                loginButton1.setVisible(false);
+                signUpButton.setVisible(false);  
+            }
+            else if (e.getSource() == signUpButton) {
+                
+            }
+            else if (e.getSource() == exitButton) {
+                System.exit(0);
+                
+            }
+            else if (e.getSource() == adminButton){
+                frame.setVisible(false);
+                new Admin();
+            }
+                
+            }
+            
+        }
     }
 
 
