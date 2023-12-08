@@ -11,6 +11,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JTextField;
+import javax.swing.JToggleButton;
 import javax.swing.border.LineBorder;
 
 
@@ -22,6 +24,10 @@ public class Login implements ActionListener, Ilogin {
     private JButton loginButton1, signUpButton, exitButton, adminButton;
     private JButton loginButton2, forgotPassB;
     private JButton previousButton;
+    private JLabel userName, userPass, confirmUserPass;
+    private JTextField userNameField, userPassField, confirmUserPassField;
+    private ImageIcon on, off;
+    private JToggleButton showPass;
 
 
     Font TitleFont = new Font("Ink Free", Font.BOLD, 50);
