@@ -28,8 +28,8 @@ public class Login implements ActionListener, Ilogin {
     private JButton loginButton2, forgotPassB;
     private JButton goBack;
     private JLabel userName, userPass;
-    private JTextField userNameField, userPassField;
-    private JPasswordField pfUser;
+    private JTextField userNameField;
+    private JPasswordField passfUser;
     private ImageIcon on, off;
     private JToggleButton showPass;
 
@@ -125,13 +125,56 @@ public class Login implements ActionListener, Ilogin {
         frame.add(adminButton);
 
 
-        //after clicking on the login button on home page
+
+        //go back to Start Screen
+        goBack = new JButton("Back");
+        goBack.setForeground(Color.WHITE);
+        goBack.setFont(DefaultFont);
+        goBack.setBounds(610, 10, 70, 25);
+        goBack.setBorder(new LineBorder(Color.decode("#254C53"), 2));
+        goBack.setBackground(Color.decode("#254C53")); 
+        // goBack.setOpaque(false);
+        // goBack.setContentAreaFilled(false);
+        goBack.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        goBack.setVisible(false);
+        goBack.addActionListener(this);
+        frame.add(goBack);
+
+
+        //user name text and password with box
+        userName = new JLabel("Username:");
+        userName.setBounds(20, 230, 200, 30);
+        userName.setFont(DefaultFont);
+        userName.setVisible(false);
+        frame.add(userName);
+ 
+        userNameField = new JTextField();
+        userNameField.setBounds(20, 260, 200, 30);
+        userNameField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        userNameField.setFont(DefaultFont);
+        userNameField.setVisible(false);
+        frame.add(userNameField);        
+        
+        userPass = new JLabel("Password:");
+        userPass.setBounds(20, 300, 200, 30);
+        userPass.setFont(DefaultFont);
+        userPass.setVisible(false);
+        frame.add(userPass);
+        
+
+        passfUser = new JPasswordField();
+        passfUser.setBounds(20, 330, 200, 30);
+        passfUser.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        passfUser.setEchoChar('*');
+        passfUser.setToolTipText("Enter password");
+        passfUser.setVisible(false);
+        frame.add(passfUser);
 
         //login button after clicking login
         loginButton2 = new JButton("Login");
         loginButton2.setFont(BodyFont);
         loginButton2.setForeground(Color.decode("#E759E4"));
-        loginButton2.setBounds(470, 180, 70,25);
+        loginButton2.setBounds(20, 370, 70, 25);
         loginButton2.setBorder(new LineBorder(Color.decode("#254C53"), 2));
         loginButton2.setBackground(new Color(0, 0, 0, 0));
         loginButton2.setOpaque(false);
@@ -141,71 +184,17 @@ public class Login implements ActionListener, Ilogin {
         loginButton2.addActionListener(this);
         frame.add(loginButton2);
 
-        //go back to Start Screen
-        goBack = new JButton("Back");
-        goBack.setForeground(Color.decode("#E70909"));
-        goBack.setFont(BodyFont);
-        goBack.setBounds(610, 10, 70, 25);
-        goBack.setBorder(new LineBorder(Color.decode("#254C53"), 2));
-        goBack.setBackground(new Color(0, 0, 0, 0)); 
-        goBack.setOpaque(false);
-        goBack.setContentAreaFilled(false);
-        goBack.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        goBack.setVisible(false);
-        goBack.addActionListener(this);
-        frame.add(goBack);
-
         //forgot password button
         forgotPassB = new JButton("Forgot Password?");
-        forgotPassB.setForeground(Color.decode("#E70909"));
-        forgotPassB.setFont(BodyFont);
-        forgotPassB.setBounds(610, 50, 70, 25);
+        forgotPassB.setForeground(Color.WHITE);
+        forgotPassB.setFont(DefaultFont);
+        forgotPassB.setBounds(20, 400, 150, 25);
         forgotPassB.setBorder(new LineBorder(Color.decode("#254C53"), 2));
-        forgotPassB.setBackground(new Color(0, 0, 0, 0)); 
-        forgotPassB.setOpaque(false);
-        forgotPassB.setContentAreaFilled(false);
+        forgotPassB.setBackground(Color.decode("#D03E3E")); 
         forgotPassB.setCursor(new Cursor(Cursor.HAND_CURSOR));
         forgotPassB.setVisible(false);
         forgotPassB.addActionListener(this);
         frame.add(forgotPassB);
-
-        //user name text and password with box
-        userName = new JLabel("Username:");
-        userName.setBounds(20, 230, 200, 30);
-        userName.setFont(DefaultFont);
-        //TODO: add user icon and turn off visible state
-        userName.setVisible(true);
-        frame.add(userName);
-
-
-        userNameField = new JTextField();
-        userNameField.setBounds(20, 260, 200, 30);
-        userNameField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        userNameField.setFont(DefaultFont);
-        userNameField.setVisible(true);
-        frame.add(userNameField);
-
-        userPass = new JLabel("Password:");
-        userPass.setBounds(20, 300, 200, 30);
-        userPass.setFont(DefaultFont);
-        userPass.setVisible(true);
-        frame.add(userPass);
-
-        userPassField = new JTextField();
-        userPassField.setBounds(20, 330, 200, 30);
-        userPassField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        userPassField.setFont(DefaultFont);
-        userPassField.setVisible(true);
-        frame.add(userPassField);
-
-        
-
-        pfUser = new JPasswordField();
-        pfUser.setBounds(20, 330, 200, 30);
-        pfUser.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        pfUser.setEchoChar('*');
-        pfUser.setToolTipText("Enter password");
-        frame.add(pfUser);
 
         //Toggle button for showing password
         on = new ImageIcon("icons/eyeopen.png");
@@ -219,8 +208,7 @@ public class Login implements ActionListener, Ilogin {
         showPass.setFocusable(false);
         showPass.setToolTipText("Show Password");
         showPass.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        showPass.setVisible(true);
-        //TODO change visible state to false
+        showPass.setVisible(false);
         frame.add(showPass);
         showPass.addActionListener(this);
 
@@ -242,32 +230,35 @@ public class Login implements ActionListener, Ilogin {
                 //for toggle button
                 if(e.getSource()==showPass){
                     if(showPass.isSelected()){
-                        userPassField.setText(new String(pfUser.getPassword()));
-                        userPassField.setVisible(true);
                         showPass.setIcon(on);
                         showPass.setToolTipText("Hide Password");
-                        pfUser.setVisible(false);
+                        passfUser.setEchoChar((char)0);
                     }
                     else{
                         showPass.setIcon(off);
                         showPass.setToolTipText("Show Password");
-                        pfUser.setText(userPassField.getText());
-                        pfUser.setVisible(true);
-                        userPassField.setVisible(false);
+                        passfUser.setEchoChar('*');
                     }
                 }
 
                 //for login button on start Screen
                 if(e.getSource() == loginButton1){
-                loginRemainder.setVisible(false);
-                loginButton1.setVisible(false);
-                signUpButton.setVisible(false);
-                shortNote.setVisible(false);
-                loginButton2.setVisible(true);
-                goBack.setVisible(true);
-                forgotPassB.setVisible(true);
-                //userName.setVisible(true);
-                    }   
+                    loginRemainder.setVisible(false);
+                    loginButton1.setVisible(false);
+                    signUpButton.setVisible(false);
+                    shortNote.setVisible(false);
+                    loginButton2.setVisible(true);
+                    goBack.setVisible(true);
+                    forgotPassB.setVisible(true);
+                    userName.setVisible(true);
+                    userNameField.setVisible(true);
+                    userPass.setVisible(true);
+                    passfUser.setVisible(true);
+                    showPass.setVisible(true);
+                    userNameField.setText(null);
+                    passfUser.setText(null);
+                    }
+
                 else if (e.getSource() == signUpButton) {
                 System.exit(0); //temporarily
                     }
