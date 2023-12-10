@@ -13,6 +13,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
 import javax.swing.border.LineBorder;
@@ -28,6 +29,7 @@ public class Login implements ActionListener, Ilogin {
     private JButton goBack;
     private JLabel userName, userPass, confirmUserPass;
     private JTextField userNameField, userPassField, confirmUserPassField;
+    private JPasswordField pfUser, cpfUser;
     private ImageIcon on, off;
     private JToggleButton showPass;
 
@@ -193,6 +195,8 @@ public class Login implements ActionListener, Ilogin {
         userPassField.setFont(DefaultFont);
         userPassField.setVisible(true);
         frame.add(userPassField);
+
+        
         
         //Toggle button for showing password
         on = new ImageIcon("icons/eyeopen.png");
@@ -210,6 +214,15 @@ public class Login implements ActionListener, Ilogin {
         //TODO change visible state to false
         frame.add(showPass);
         showPass.addActionListener(this);
+
+        pfUser = new JPasswordField();
+        pfUser.setBounds(20, 330, 200, 30);
+        pfUser.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        pfUser.setEchoChar('*');
+        pfUser.setToolTipText("Enter password");
+        pfUser.setVisible(true);
+        frame.add(pfUser);
+
 
         frame.setSize(800, 600);
         frame.setResizable(false);
@@ -230,10 +243,12 @@ public class Login implements ActionListener, Ilogin {
                     if(showPass.isSelected()){
                         showPass.setIcon(on);
                         showPass.setToolTipText("Hide Password");
+                        pfUser.setEchoChar((char)0);
                     }
                     else{
                         showPass.setIcon(off);
                         showPass.setToolTipText("Show Password");
+                        pfUser.setEchoChar('*');
                     }
                 }
 
