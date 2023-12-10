@@ -199,8 +199,8 @@ public class Login implements ActionListener, Ilogin {
         off = new ImageIcon("icons/eyeclose.png");
         showPass = new JToggleButton();
         showPass.setBounds(225, 330, 30, 30);
+        showPass.setIcon(off);
         showPass.setBackground(new Color(0,0,0,0));
-        showPass.setForeground(new Color(173,255,47));
         showPass.setOpaque(false);
         showPass.setBorder(BorderFactory.createEmptyBorder());
         showPass.setFocusable(false);
@@ -229,9 +229,11 @@ public class Login implements ActionListener, Ilogin {
                 if(e.getSource()==showPass){
                     if(showPass.isSelected()){
                         showPass.setIcon(on);
+                        showPass.setToolTipText("Hide Password");
                     }
                     else{
                         showPass.setIcon(off);
+                        showPass.setToolTipText("Show Password");
                     }
                 }
 
