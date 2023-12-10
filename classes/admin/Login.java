@@ -53,73 +53,64 @@ public class Login implements ActionListener, Ilogin {
         title = new JLabel("QUICK");
         title.setForeground(Color.decode("#525151"));
         title.setFont(TitleFont);
-        title.setBounds(200, 10, 300, 70);
+        title.setBounds(200, 40, 300, 70);
         frame.add(title);
 
         title1 = new JLabel("GRABBS");
         title1.setForeground(Color.decode("#525151"));
         title1.setFont(TitleFont);
-        title1.setBounds(350, 40, 300, 70);
+        title1.setBounds(350, 90, 300, 70);
         frame.add(title1);
 
         shortNote = new JLabel("Grab Your Food");
         shortNote.setForeground(Color.decode("#C93D3D"));
         shortNote.setFont(BodyFont);
-        shortNote.setBounds(300, 80, 380,60);
+        shortNote.setBounds(300, 130, 380,60);
         frame.add(shortNote);
 
         //text that remainds to log in or Sign up
         loginRemainder = new JLabel("Login or Sign Up to Continue");
         loginRemainder.setForeground(Color.decode("#85C93C"));
         loginRemainder.setFont(BodyFont);
-        loginRemainder.setBounds(240, 130, 380,60);
+        loginRemainder.setBounds(240, 180, 380,60);
         frame.add(loginRemainder);
 
         loginButton1 = new JButton("Login");
-        loginButton1.setForeground(Color.decode("#E759E4"));
-        loginButton1.setFont(BodyFont);
-        loginButton1.setBounds(290, 180, 70,25);
+        loginButton1.setForeground(Color.WHITE);
+        loginButton1.setFont(DefaultFont);
+        loginButton1.setBounds(290, 240, 70,25);
         loginButton1.setBorder(new LineBorder(Color.decode("#254C53"), 2));
-        loginButton1.setBackground(new Color(0, 0, 0, 0)); // RGB values are 0 and alpha is 0
-        loginButton1.setOpaque(false);
-        loginButton1.setContentAreaFilled(false);
+        loginButton1.setBackground(Color.decode("#73D052"));
         loginButton1.setCursor(new Cursor(Cursor.HAND_CURSOR));
         loginButton1.addActionListener(this);
         frame.add(loginButton1);
         
         signUpButton = new JButton("Sign Up");
-        signUpButton.setForeground(Color.decode("#E759E4"));
-        signUpButton.setFont(BodyFont);
-        signUpButton.setBounds(380, 180, 80,25);
+        signUpButton.setForeground(Color.WHITE);
+        signUpButton.setFont(DefaultFont);
+        signUpButton.setBounds(380, 240, 80,25);
         signUpButton.setBorder(new LineBorder(Color.decode("#254C53"), 2));
-        //next 3 line making background transparent for the button
-        signUpButton.setBackground(new Color(0, 0, 0, 0)); // RGB values are 0 and alpha is 0
-        signUpButton.setOpaque(false);
-        signUpButton.setContentAreaFilled(false);
+        signUpButton.setBackground(Color.decode("#73D052"));
         signUpButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
         signUpButton.addActionListener(this);
         frame.add(signUpButton);
 
         exitButton = new JButton("Exit");
-        exitButton.setForeground(Color.decode("#E759E4"));
-        exitButton.setFont(BodyFont);
-        exitButton.setBounds(330, 220, 70, 25);
+        exitButton.setForeground(Color.WHITE);
+        exitButton.setFont(DefaultFont);
+        exitButton.setBounds(330, 500, 70, 25);
         exitButton.setBorder(new LineBorder(Color.decode("#254C53"), 2));
-        exitButton.setBackground(new Color(0, 0, 0, 0)); 
-        exitButton.setOpaque(false);
-        exitButton.setContentAreaFilled(false);
+        exitButton.setBackground(Color.decode("#D03E3E"));
 		exitButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		exitButton.addActionListener(this);
         frame.add(exitButton);
 
         adminButton = new JButton("Admin");
-        adminButton.setForeground(Color.decode("#E70909"));
-        adminButton.setFont(BodyFont);
+        adminButton.setForeground(Color.BLACK);
+        adminButton.setFont(DefaultFont);
         adminButton.setBounds(700, 10, 70, 25);
-        adminButton.setBorder(new LineBorder(Color.decode("#254C53"), 2));
-        adminButton.setBackground(new Color(0, 0, 0, 0)); 
-        adminButton.setOpaque(false);
-        adminButton.setContentAreaFilled(false);
+        adminButton.setBorder(new LineBorder(Color.decode("#B2BF3D"), 2));
+        adminButton.setBackground(Color.decode("#B2BF3D"));
         adminButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
         adminButton.addActionListener(this);
         frame.add(adminButton);
@@ -173,12 +164,10 @@ public class Login implements ActionListener, Ilogin {
         //login button after clicking login
         loginButton2 = new JButton("Login");
         loginButton2.setFont(BodyFont);
-        loginButton2.setForeground(Color.decode("#E759E4"));
+        loginButton2.setForeground(Color.WHITE);
         loginButton2.setBounds(20, 370, 70, 25);
         loginButton2.setBorder(new LineBorder(Color.decode("#254C53"), 2));
-        loginButton2.setBackground(new Color(0, 0, 0, 0));
-        loginButton2.setOpaque(false);
-        loginButton2.setContentAreaFilled(false);
+        loginButton2.setBackground(Color.decode("#73D052"));
         loginButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
         loginButton2.setVisible(false);
         loginButton2.addActionListener(this);
