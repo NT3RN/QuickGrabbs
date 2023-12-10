@@ -27,9 +27,9 @@ public class Login implements ActionListener, Ilogin {
     private JButton loginButton1, signUpButton, exitButton, adminButton;
     private JButton loginButton2, forgotPassB;
     private JButton goBack;
-    private JLabel userName, userPass, confirmUserPass;
-    private JTextField userNameField, userPassField, confirmUserPassField;
-    private JPasswordField pfUser, cpfUser;
+    private JLabel userName, userPass;
+    private JTextField userNameField, userPassField;
+    private JPasswordField pfUser;
     private ImageIcon on, off;
     private JToggleButton showPass;
 
@@ -180,6 +180,7 @@ public class Login implements ActionListener, Ilogin {
 
         userNameField = new JTextField();
         userNameField.setBounds(20, 260, 200, 30);
+        userNameField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         userNameField.setFont(DefaultFont);
         userNameField.setVisible(true);
         frame.add(userNameField);
@@ -192,12 +193,20 @@ public class Login implements ActionListener, Ilogin {
 
         userPassField = new JTextField();
         userPassField.setBounds(20, 330, 200, 30);
+        userPassField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         userPassField.setFont(DefaultFont);
         userPassField.setVisible(true);
         frame.add(userPassField);
 
         
-        
+
+        pfUser = new JPasswordField();
+        pfUser.setBounds(20, 330, 200, 30);
+        pfUser.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        pfUser.setEchoChar('*');
+        pfUser.setToolTipText("Enter password");
+        frame.add(pfUser);
+
         //Toggle button for showing password
         on = new ImageIcon("icons/eyeopen.png");
         off = new ImageIcon("icons/eyeclose.png");
@@ -214,14 +223,6 @@ public class Login implements ActionListener, Ilogin {
         //TODO change visible state to false
         frame.add(showPass);
         showPass.addActionListener(this);
-
-        pfUser = new JPasswordField();
-        pfUser.setBounds(20, 330, 200, 30);
-        pfUser.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        pfUser.setEchoChar('*');
-        pfUser.setToolTipText("Enter password");
-        pfUser.setVisible(true);
-        frame.add(pfUser);
 
 
         frame.setSize(800, 600);
@@ -241,14 +242,18 @@ public class Login implements ActionListener, Ilogin {
                 //for toggle button
                 if(e.getSource()==showPass){
                     if(showPass.isSelected()){
+                        userPassField.setText(new String(pfUser.getPassword()));
+                        userPassField.setVisible(true);
                         showPass.setIcon(on);
                         showPass.setToolTipText("Hide Password");
-                        pfUser.setEchoChar((char)0);
+                        pfUser.setVisible(false);
                     }
                     else{
                         showPass.setIcon(off);
                         showPass.setToolTipText("Show Password");
-                        pfUser.setEchoChar('*');
+                        pfUser.setText(userPassField.getText());
+                        pfUser.setVisible(true);
+                        userPassField.setVisible(false);
                     }
                 }
 
