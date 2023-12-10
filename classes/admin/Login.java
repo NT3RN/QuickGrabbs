@@ -7,7 +7,6 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -117,44 +116,29 @@ public class Login implements ActionListener, Ilogin {
 
 
 
-        //go back to Start Screen
-        goBack = new JButton("Back");
-        goBack.setForeground(Color.WHITE);
-        goBack.setFont(DefaultFont);
-        goBack.setBounds(610, 10, 70, 25);
-        goBack.setBorder(new LineBorder(Color.decode("#254C53"), 2));
-        goBack.setBackground(Color.decode("#254C53")); 
-        // goBack.setOpaque(false);
-        // goBack.setContentAreaFilled(false);
-        goBack.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        goBack.setVisible(false);
-        goBack.addActionListener(this);
-        frame.add(goBack);
-
-
         //user name text and password with box
         userName = new JLabel("Username:");
-        userName.setBounds(20, 230, 200, 30);
+        userName.setBounds(30, 230, 200, 30);
         userName.setFont(DefaultFont);
         userName.setVisible(false);
         frame.add(userName);
  
         userNameField = new JTextField();
-        userNameField.setBounds(20, 260, 200, 30);
+        userNameField.setBounds(30, 260, 200, 30);
         userNameField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         userNameField.setFont(DefaultFont);
         userNameField.setVisible(false);
         frame.add(userNameField);        
         
         userPass = new JLabel("Password:");
-        userPass.setBounds(20, 300, 200, 30);
+        userPass.setBounds(30, 300, 200, 30);
         userPass.setFont(DefaultFont);
         userPass.setVisible(false);
         frame.add(userPass);
         
 
         passfUser = new JPasswordField();
-        passfUser.setBounds(20, 330, 200, 30);
+        passfUser.setBounds(30, 330, 200, 30);
         passfUser.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
         passfUser.setEchoChar('*');
         passfUser.setToolTipText("Enter password");
@@ -163,9 +147,9 @@ public class Login implements ActionListener, Ilogin {
 
         //login button after clicking login
         loginButton2 = new JButton("Login");
-        loginButton2.setFont(BodyFont);
+        loginButton2.setFont(DefaultFont);
         loginButton2.setForeground(Color.WHITE);
-        loginButton2.setBounds(20, 370, 70, 25);
+        loginButton2.setBounds(30, 370, 70, 25);
         loginButton2.setBorder(new LineBorder(Color.decode("#254C53"), 2));
         loginButton2.setBackground(Color.decode("#73D052"));
         loginButton2.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -173,11 +157,24 @@ public class Login implements ActionListener, Ilogin {
         loginButton2.addActionListener(this);
         frame.add(loginButton2);
 
+        //go back to Start Screen
+        goBack = new JButton("Back");
+        goBack.setForeground(Color.WHITE);
+        goBack.setFont(DefaultFont);
+        goBack.setBounds(110, 370, 70, 25);
+        goBack.setBorder(new LineBorder(Color.decode("#254C53"), 2));
+        goBack.setBackground(Color.decode("#254C53")); 
+        goBack.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        goBack.setVisible(false);
+        goBack.addActionListener(this);
+        frame.add(goBack);
+
+
         //forgot password button
         forgotPassB = new JButton("Forgot Password?");
         forgotPassB.setForeground(Color.WHITE);
         forgotPassB.setFont(DefaultFont);
-        forgotPassB.setBounds(20, 400, 150, 25);
+        forgotPassB.setBounds(30, 400, 150, 25);
         forgotPassB.setBorder(new LineBorder(Color.decode("#254C53"), 2));
         forgotPassB.setBackground(Color.decode("#D03E3E")); 
         forgotPassB.setCursor(new Cursor(Cursor.HAND_CURSOR));
@@ -246,7 +243,22 @@ public class Login implements ActionListener, Ilogin {
                     showPass.setVisible(true);
                     userNameField.setText(null);
                     passfUser.setText(null);
-                    }
+                }
+                
+                else if(e.getSource() == goBack) {
+                    loginRemainder.setVisible(true);
+                    loginButton1.setVisible(true);
+                    signUpButton.setVisible(true);
+                    shortNote.setVisible(true);
+                    loginButton2.setVisible(false);
+                    goBack.setVisible(false);
+                    forgotPassB.setVisible(false );
+                    userName.setVisible(false);
+                    userNameField.setVisible(false);
+                    userPass.setVisible(false);
+                    passfUser.setVisible(false);
+                    showPass.setVisible(false);                    
+                }
 
                 else if (e.getSource() == signUpButton) {
                 System.exit(0); //temporarily
