@@ -1,5 +1,6 @@
 package classes.admin;
 import interfaces.*;
+import classes.user.*;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -204,8 +205,8 @@ public class Login implements ActionListener, Ilogin {
         frame.setResizable(false);
         //makes layout visible
         frame.setVisible(true);
-        frame.setLayout(null);
-        frame.setLocationRelativeTo(null);
+        frame.setLayout(null); //controlls position and size
+        frame.setLocationRelativeTo(null); //position relative to screen mainly center
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 
@@ -257,7 +258,7 @@ public class Login implements ActionListener, Ilogin {
                         //new UserLogin(user, pass); TODO handle login
                     }
                 }
-                
+
                 else if(e.getSource() == goBack) {
                     loginRemainder.setVisible(true);
                     loginButton1.setVisible(true);
@@ -274,16 +275,17 @@ public class Login implements ActionListener, Ilogin {
                 }
 
                 else if (e.getSource() == signUpButton) {
-                System.exit(0); //temporarily
+                    frame.setVisible(false);
+                    new SignUp();
                     }
                 else if (e.getSource() == exitButton) {
                 System.exit(0);
                 
                     }
                 else if (e.getSource() == adminButton){
-                // frame.setVisible(false);
-                System.exit(0); //temporarily
+                //frame.setVisible(false);
                 //new AdminLogin();
+                System.exit(0); //temporarily
                     }   
                 
         }
