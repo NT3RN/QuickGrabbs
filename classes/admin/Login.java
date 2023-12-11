@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
@@ -180,13 +181,13 @@ public class Login implements ActionListener, Ilogin {
         forgotPassB.setCursor(new Cursor(Cursor.HAND_CURSOR));
         forgotPassB.setVisible(false);
         forgotPassB.addActionListener(this);
-        frame.add(forgotPassB);
+        //frame.add(forgotPassB);  //temporarily removed
 
         //Toggle button for showing password
         on = new ImageIcon("icons/eyeopen.png");
         off = new ImageIcon("icons/eyeclose.png");
         showPass = new JToggleButton();
-        showPass.setBounds(225, 330, 30, 30);
+        showPass.setBounds(230, 330, 30, 30);
         showPass.setIcon(off);
         showPass.setBackground(new Color(0,0,0,0));
         showPass.setOpaque(false);
@@ -243,6 +244,18 @@ public class Login implements ActionListener, Ilogin {
                     showPass.setVisible(true);
                     userNameField.setText(null);
                     passfUser.setText(null);
+                }
+
+                else if(e.getSource() == loginButton2){
+                    String user = userNameField.getText();
+                    String pass = passfUser.getText();
+                    if(user.isEmpty() || pass.isEmpty()){
+                        JOptionPane.showMessageDialog(null, "Please enter username and password", "Error!",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+                    else{
+                        //new UserLogin(user, pass); TODO handle login
+                    }
                 }
                 
                 else if(e.getSource() == goBack) {
