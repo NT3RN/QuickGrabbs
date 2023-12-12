@@ -279,7 +279,9 @@ public class Login implements ActionListener, Ilogin {
                     new SignUp();
                     }
                 else if (e.getSource() == exitButton) {
-                System.exit(0);
+                    
+                    System.exit(0);
+                
                 
                     }
                 else if (e.getSource() == adminButton){
