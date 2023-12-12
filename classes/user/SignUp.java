@@ -1,27 +1,37 @@
 package classes.user;
+import classes.admin.*;
+import interfaces.*;
 
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JToggleButton;
+import javax.swing.border.LineBorder;
 
-import interfaces.ISignUp;
+
 
 
 public class SignUp implements ActionListener, ISignUp{
     private JFrame frame;
-    private JLabel signUpLabel, userName, userPass, cuserPass;
-    private JTextField userNameField;
+    private JLabel signUpLabel, userName, userPass, cuserPass, mail;
+    private JTextField userNameTF, mailTF;
     private JPasswordField passfUser, cpassfUser;
     private ImageIcon on, off;
     private JToggleButton showPass;
@@ -54,12 +64,12 @@ public class SignUp implements ActionListener, ISignUp{
         userName.setVisible(true);
         frame.add(userName);
  
-        userNameField = new JTextField();
-        userNameField.setBounds(300, 180, 200, 30);
-        userNameField.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
-        userNameField.setFont(DefaultFont);
-        userNameField.setVisible(true);
-        frame.add(userNameField);        
+        userNameTF = new JTextField();
+        userNameTF.setBounds(300, 180, 200, 30);
+        userNameTF.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        userNameTF.setFont(DefaultFont);
+        userNameTF.setVisible(true);
+        frame.add(userNameTF);        
         
         userPass = new JLabel("Password:");
         userPass.setBounds(300, 210, 200, 30);
@@ -108,7 +118,50 @@ public class SignUp implements ActionListener, ISignUp{
         cpassfUser.setToolTipText("Enter password");
         cpassfUser.setVisible(true);
         frame.add(cpassfUser);
+        
+        mail = new JLabel("Email:");
+        mail.setBounds(300, 330, 200, 30);
+        mail.setFont(DefaultFont);
+        mail.setVisible(true);
+        frame.add(mail);
 
+        mailTF = new JTextField();
+        mailTF.setBounds(300, 360, 200, 30);
+        mailTF.setBorder(BorderFactory.createLineBorder(Color.BLUE, 1));
+        mailTF.setFont(DefaultFont);
+        mailTF.setVisible(true);
+        frame.add(mailTF);
+
+        signup = new JButton("Sign Up");
+        signup.setForeground(Color.WHITE);
+        signup.setFont(DefaultFont);
+        signup.setBounds(300, 400, 80, 25);
+        signup.setBorder(new LineBorder(Color.decode("#254C53"), 2));
+        signup.setBackground(Color.decode("#3E9AD0"));
+        signup.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        signup.addActionListener(this);
+        frame.add(signup);
+
+        cancel = new JButton("Cancel");
+        cancel.setForeground(Color.WHITE);
+        cancel.setFont(DefaultFont);
+        cancel.setBounds(420, 400, 80, 25);
+        cancel.setBorder(new LineBorder(Color.decode("#254C53"), 2));
+        cancel.setBackground(Color.decode("#EE7EDF"));
+        cancel.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        cancel.addActionListener(this);
+        frame.add(cancel);
+
+
+        exit = new JButton("Exit");
+        exit.setForeground(Color.WHITE);
+        exit.setFont(DefaultFont);
+        exit.setBounds(350, 500, 70, 25);
+        exit.setBorder(new LineBorder(Color.decode("#254C53"), 2));
+        exit.setBackground(Color.decode("#D03E3E"));
+		exit.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		exit.addActionListener(this);
+        frame.add(exit);
 
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -137,6 +190,65 @@ public class SignUp implements ActionListener, ISignUp{
                 passfUser.setEchoChar('*');
                 cpassfUser.setEchoChar('*');
             }
+        }
+
+        else if(e.getSource()==signup){
+            String username = userNameTF.getText();
+            String password = passfUser.getText();
+            String confirmPass = cpassfUser.getText();
+            String email = mailTF.getText();
+
+            if(username.isEmpty()==false && password.isEmpty()==false && email.isEmpty()==false){
+                if(confirmPass.equals(password)){
+                    try{
+                        File file = new File("data\\user\\user_data.txt");
+                        if(file.exists()==false){
+                            file.createNewFile();
+                        }
+                        FileWriter fw = new FileWriter(file, true);
+                        BufferedWriter bw = new BufferedWriter(fw);
+                        PrintWriter pw = new PrintWriter(bw);
+                        LocalDateTime myDateTime = LocalDateTime.now();
+                        DateTimeFormatter myDateFormat = DateTimeFormatter.ofPattern("HH:mm a, dd/MM/yyyy");
+
+                        String timeAndDate = myDateFormat.format(myDateTime);
+
+                        pw.println("User Name: "+ username);
+                        pw.println("Password : "+ password);
+                        pw.println("Email    : "+ email);
+                        pw.println("Time & Date: "+ timeAndDate);
+                        pw.println("***********************************");
+                        pw.close();
+
+                        JOptionPane.showMessageDialog(null, "New user account created successfully!","User created", JOptionPane.INFORMATION_MESSAGE);
+                        userNameTF.setText(null);
+                        passfUser.setText(null);
+                        cpassfUser.setText(null);
+                        mailTF.setText(null);
+                        frame.setVisible(false);
+                        new Login();
+                    }
+
+                    catch(Exception ex){
+                        JOptionPane.showMessageDialog(null, "Something went wrong!","Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Password does not match!","Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Please fill up all the fields!");
+            }
+        }
+        else if(e.getSource()==cancel){
+            frame.setVisible(false);
+            new Login();
+        }
+
+
+        else if(e.getSource()==exit){
+            System.exit(0);
         }
 
     }

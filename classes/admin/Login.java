@@ -8,6 +8,11 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -247,7 +252,7 @@ public class Login implements ActionListener, Ilogin {
                     passfUser.setText(null);
                 }
 
-                else if(e.getSource() == loginButton2){
+                if(e.getSource() == loginButton2){
                     String user = userNameField.getText();
                     String pass = passfUser.getText();
                     if(user.isEmpty() || pass.isEmpty()){
@@ -255,9 +260,41 @@ public class Login implements ActionListener, Ilogin {
                                 JOptionPane.ERROR_MESSAGE);
                     }
                     else{
-                        //new UserLogin(user, pass); TODO handle login
-                    }
+                        try{
+                            String userNameL = "User Name: "+user;
+                            String passwordL = "Password : "+pass;
+                            BufferedReader reader = new BufferedReader(new FileReader("data\\user\\user_data.txt"));
+                    
+                            String line;
+                            boolean found = false;
+                            while ((line = reader.readLine()) != null) {
+                                if(line.equals(userNameL)){
+                                    found = true;
+                                    if((line = reader.readLine()) != null && line.equals(passwordL)){
+                                        frame.setVisible(false);
+                                        JOptionPane.showMessageDialog(null, "login working", "eaah!!!", JOptionPane.INFORMATION_MESSAGE);
+                                        new Login(); //TODO change to next page
+                                        break;
+                                    } else {
+                                        JOptionPane.showMessageDialog(null, "Invalid password!", "Warning!",
+                                                JOptionPane.ERROR_MESSAGE);
+                                        break;
+                                    }
+                                }
+                            }
+                    
+                            if (!found) {
+                                JOptionPane.showMessageDialog(null, "Invalid username!", "Warning!",
+                                        JOptionPane.ERROR_MESSAGE);
+                            }
+                    
+                            reader.close();
+                        } catch(Exception ex){
+                            JOptionPane.showMessageDialog(null, "Error reading user data!", "Warning!",
+                                    JOptionPane.ERROR_MESSAGE);
+                        }
                 }
+            }
 
                 else if(e.getSource() == goBack) {
                     loginRemainder.setVisible(true);
@@ -287,7 +324,7 @@ public class Login implements ActionListener, Ilogin {
                 else if (e.getSource() == adminButton){
                 //frame.setVisible(false);
                 //new AdminLogin();
-                System.exit(0); //temporarily
+                System.exit(0); //temporarily TODO
                     }   
                 
         }
