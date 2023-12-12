@@ -10,9 +10,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -187,7 +184,7 @@ public class Login implements ActionListener, Ilogin {
         forgotPassB.setCursor(new Cursor(Cursor.HAND_CURSOR));
         forgotPassB.setVisible(false);
         forgotPassB.addActionListener(this);
-        //frame.add(forgotPassB);  //temporarily removed
+        //frame.add(forgotPassB);  //can be added later if required
 
         //Toggle button for showing password
         on = new ImageIcon("icons/eyeopen.png");
@@ -324,7 +321,7 @@ public class Login implements ActionListener, Ilogin {
                 else if (e.getSource() == adminButton){
                 //frame.setVisible(false);
                 //new AdminLogin();
-                System.exit(0); //temporarily TODO
+                System.exit(0); //temporarily TODO change to admin login Aditto
                     }   
                 
         }
