@@ -201,7 +201,7 @@ public class SignUp implements ActionListener, ISignUp{
             if(username.isEmpty()==false && password.isEmpty()==false && email.isEmpty()==false){
                 if(confirmPass.equals(password)){
                     try{
-                        File file = new File("data\\user\\user_data.txt");
+                        File file = new File("data\\user_data\\user_data.txt");
                         if(file.exists()==false){
                             file.createNewFile();
                         }

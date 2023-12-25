@@ -10,6 +10,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
+
+
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -256,11 +258,12 @@ public class Login implements ActionListener, Ilogin {
                         JOptionPane.showMessageDialog(null, "Please enter username and password", "Error!",
                                 JOptionPane.ERROR_MESSAGE);
                     }
+                    
                     else{
                         try{
                             String userNameL = "User Name: "+user;
                             String passwordL = "Password : "+pass;
-                            BufferedReader reader = new BufferedReader(new FileReader("data\\user\\user_data.txt"));
+                            BufferedReader reader = new BufferedReader(new FileReader("data\\user_data\\user_data.txt"));
                     
                             String line;
                             boolean found = false;
@@ -290,7 +293,9 @@ public class Login implements ActionListener, Ilogin {
                             JOptionPane.showMessageDialog(null, "Error reading user data!", "Warning!",
                                     JOptionPane.ERROR_MESSAGE);
                         }
-                }
+
+                        
+                    }
             }
 
                 else if(e.getSource() == goBack) {
@@ -319,9 +324,9 @@ public class Login implements ActionListener, Ilogin {
                 
                     }
                 else if (e.getSource() == adminButton){
-                //frame.setVisible(false);
-                //new AdminLogin();
-                System.exit(0); //temporarily TODO change to admin login Aditto
+                frame.setVisible(false);
+                new Adminlogin();
+                // System.exit(0); //temporarily TODO change to admin login Aditto
                     }   
                 
         }
