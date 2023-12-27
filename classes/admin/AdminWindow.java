@@ -89,7 +89,7 @@ public class AdminWindow extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==userB){
-            AdminUserinfo uw= new AdminUserinfo();
+            AdminUserInfo uw= new AdminUserInfo();
             uw.setVisible(false);
             wf.setVisible(false);
         }
