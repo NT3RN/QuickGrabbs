@@ -1,4 +1,3 @@
-# QuickGrabbs
-A Java online food ordering Application 
+# QuickGrabbs\n
+A food ordering application\n
 Work in progress
-signed commit
