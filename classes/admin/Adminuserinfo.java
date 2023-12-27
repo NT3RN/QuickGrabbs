@@ -14,7 +14,7 @@ import java.io.*;
 import interfaces.*;
 
 
-public class Adminuserinfo extends JFrame implements ActionListener {
+public class AdminUserinfo extends JFrame implements ActionListener {
     JFrame w2f;
     private Container c;
     private Font f;
@@ -29,7 +29,7 @@ public class Adminuserinfo extends JFrame implements ActionListener {
     private String[] columns = {"Customer's Record"};
     private String[] rows = new String[3];
 
-    Adminuserinfo(){
+    AdminUserinfo(){
 
         w2f=new JFrame("User Information");
         w2f.setIconImage(new ImageIcon(getClass().getResource("/icons/framelogo.png")).getImage());
@@ -207,7 +207,7 @@ public class Adminuserinfo extends JFrame implements ActionListener {
                 pw.close();
                 JOptionPane.showMessageDialog(null, "New user account created successfully!","User created", JOptionPane.INFORMATION_MESSAGE);
 
-                new Adminuserinfo();
+                new AdminUserinfo();
                 w2f.setVisible(false);
             }catch(Exception e2){
                 System.out.println(e2);

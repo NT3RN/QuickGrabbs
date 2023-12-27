@@ -1,7 +1,6 @@
 package classes.user;
 import interfaces.*;
 import classes.admin.Adminlogin;
-import classes.user.*;
 
 import java.awt.Color;
 import java.awt.Cursor;

@@ -1,5 +1,4 @@
 package classes.user;
-import classes.admin.*;
 import interfaces.*;
 
 import java.awt.Color;
