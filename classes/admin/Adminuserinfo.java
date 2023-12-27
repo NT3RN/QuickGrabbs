@@ -198,6 +198,7 @@ public class Adminuserinfo extends JFrame implements ActionListener {
                 DateTimeFormatter myDateFormat = DateTimeFormatter.ofPattern("HH:mm a, dd/MM/yyyy");
 
                 String timeAndDate = myDateFormat.format(myDateTime);
+                pw.println("             ## Added by Admin ##");
                 pw.println("User Name  : "+ rows[0]);
                 pw.println("Password   : "+ rows[1]);
                 pw.println("Email      : "+ rows[2]);
