@@ -1,20 +1,15 @@
-User Name  : aditya
-Password   : a
-Email      : a@gmail.com
-Time & Date: 04:40 AM, 27/12/2023
-***********************************
-User Name  : a
+Admin Name : a
 Password   : a
 Email      : a
-Time & Date: 05:05 AM, 27/12/2023
+Time & Date: 09:35 AM, 27/12/2023
 ***********************************
-User Name  : a4
-Password   : a4
-Email      : a4
-Time & Date: 05:10 AM, 27/12/2023
-***********************************
-User Name  : nafim
+Admin Name : aditta
 Password   : 1234
-Email      : 123@nafim
-Time & Date: 09:18 AM, 27/12/2023
+Email      : aditta@gmail.com
+Time & Date: 09:44 AM, 27/12/2023
+***********************************
+Admin Name : nafim
+Password   : 1234
+Email      : nafim@gmail.com
+Time & Date: 09:45 AM, 27/12/2023
 ***********************************

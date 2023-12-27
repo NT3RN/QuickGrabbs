@@ -183,13 +183,13 @@ public class Adminaddadmin extends JFrame implements ActionListener {
                 DateTimeFormatter myDateFormat = DateTimeFormatter.ofPattern("HH:mm a, dd/MM/yyyy");
 
                 String timeAndDate = myDateFormat.format(myDateTime);
-                pw.println("User Name  : "+ rows[0]);
+                pw.println("Admin Name : "+ rows[0]);
                 pw.println("Password   : "+ rows[1]);
                 pw.println("Email      : "+ rows[2]);
                 pw.println("Time & Date: "+ timeAndDate);
                 pw.println("***********************************");
                 pw.close();
-                JOptionPane.showMessageDialog(null, "New Admin account created successfully!","User created", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null, "New Admin account created successfully!","Admin created", JOptionPane.INFORMATION_MESSAGE);
 
                 new Adminaddadmin();
                 w2f.setVisible(false);

@@ -50,15 +50,15 @@ public class Adminlogin extends JFrame implements ActionListener {
         f = new Font("Arial",Font.BOLD,18);
         f2 = new Font("Arial",Font.BOLD,11);
 
-        textL = new JLabel("!!Hello!!");
-        textL.setBounds(300,50,200,50);
-        textL.setFont(new Font("Roboto", Font.PLAIN, 50));
+        textL = new JLabel("Admin Login");
+        textL.setBounds(280,50,250,35);
+        textL.setFont(new Font("Roboto", Font.PLAIN, 30));
         c.add(textL);
         
 
 
         // for user
-        userL = new JLabel("Username: ");
+        userL = new JLabel("Admin ID: ");
         userL.setBounds(50,180,150,50);
         userL.setFont(f);
         c.add(userL);
@@ -128,7 +128,7 @@ public class Adminlogin extends JFrame implements ActionListener {
             else{
                 
                 try{
-                    String userNameL = "User Name  : "+userN;
+                    String userNameL = "Admin Name : "+userN;
                     String passwordL = "Password   : "+passW;
                     BufferedReader br = new BufferedReader(new FileReader("data\\admin_data\\admin_data.txt"));
             
