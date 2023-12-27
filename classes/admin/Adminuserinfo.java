@@ -12,10 +12,9 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import interfaces.*;
-import classes.user.*;
 
 
-public class AdminUserInfo extends JFrame implements ActionListener {
+public class Adminuserinfo extends JFrame implements ActionListener {
     JFrame w2f;
     private Container c;
     private Font f;
@@ -30,7 +29,7 @@ public class AdminUserInfo extends JFrame implements ActionListener {
     private String[] columns = {"Customer's Record"};
     private String[] rows = new String[3];
 
-    AdminUserInfo(){
+    Adminuserinfo(){
 
         w2f=new JFrame("User Information");
         w2f.setIconImage(new ImageIcon(getClass().getResource("/icons/framelogo.png")).getImage());
@@ -208,7 +207,7 @@ public class AdminUserInfo extends JFrame implements ActionListener {
                 pw.close();
                 JOptionPane.showMessageDialog(null, "New user account created successfully!","User created", JOptionPane.INFORMATION_MESSAGE);
 
-                new AdminUserInfo();
+                new Adminuserinfo();
                 w2f.setVisible(false);
             }catch(Exception e2){
                 System.out.println(e2);
