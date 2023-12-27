@@ -263,8 +263,8 @@ public class Login implements ActionListener, Ilogin {
                     
                     else{
                         try{
-                            String userNameL = "User Name: "+user;
-                            String passwordL = "Password : "+pass;
+                            String userNameL = "User Name  : "+user;
+                            String passwordL = "Password   : "+pass;
                             BufferedReader reader = new BufferedReader(new FileReader("data\\user_data\\user_data.txt"));
                     
                             String line;

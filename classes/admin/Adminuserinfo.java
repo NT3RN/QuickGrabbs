@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
+import interfaces.*;
 
 
 public class Adminuserinfo extends JFrame implements ActionListener {
@@ -23,7 +24,7 @@ public class Adminuserinfo extends JFrame implements ActionListener {
     private JScrollPane scroll;
     private DefaultTableModel m;
 
-    private String[] columns = {"Username","Password","Email"};
+    private String[] columns = {"Customer's Record"};
     private String[] rows = new String[3];
 
     Adminuserinfo(){
@@ -131,20 +132,20 @@ public class Adminuserinfo extends JFrame implements ActionListener {
         
 
         try{
-            BufferedReader br = new BufferedReader(new FileReader("data\\admin_data\\user_data.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("data\\user_data\\user_data.txt"));
             ArrayList<String> lines = new ArrayList<>();
             lines.addAll(br.lines().toList());  // lines into arraylist
 
-            // only show the even lines
-            for (int i = 1; i< lines.size(); i+=2) {
+            
+            for (int i = 0; i< lines.size(); i++) {
             String line = lines.get(i).trim();
-            String[] data = line.split("- ");
+            String[] data = line.split("-");
             m.addRow(data);
             }
             br.close();
             } catch (IOException e1) {
                System.out.println(e1);
-        }
+            }
 
         //add image in background
         imageL = new JLabel();
@@ -170,7 +171,7 @@ public class Adminuserinfo extends JFrame implements ActionListener {
             rows[1]=pT.getText();
             rows[2]=eT.getText();
             m.addRow(rows);
-            File file = new File("data\\admin_data\\user_data.txt");
+            
             
             try{
                 File file2 = new File("data\\user_data\\user_data.txt");
@@ -184,40 +185,21 @@ public class Adminuserinfo extends JFrame implements ActionListener {
                 DateTimeFormatter myDateFormat = DateTimeFormatter.ofPattern("HH:mm a, dd/MM/yyyy");
 
                 String timeAndDate = myDateFormat.format(myDateTime);
-                pw.println("User Name: "+ rows[0]);
-                pw.println("Password : "+ rows[1]);
-                pw.println("Email    : "+ rows[2]);
+                pw.println("User Name  : "+ rows[0]);
+                pw.println("Password   : "+ rows[1]);
+                pw.println("Email      : "+ rows[2]);
                 pw.println("Time & Date: "+ timeAndDate);
                 pw.println("***********************************");
                 pw.close();
+                JOptionPane.showMessageDialog(null, "New user account created successfully!","User created", JOptionPane.INFORMATION_MESSAGE);
 
+                new Adminuserinfo();
+                w2f.setVisible(false);
             }catch(Exception e2){
                 System.out.println(e2);
             }
-            try{
-                
-                if(file.exists()==false){
-                   file.createNewFile();
-                }
-                FileWriter fw = new FileWriter(file, true);
-                BufferedWriter bw = new BufferedWriter(fw);
-                PrintWriter pw = new PrintWriter(bw);
-                
-                pw.println(columns[0]+" - "+ columns[1]+" - "+columns[2]);
-                pw.println(rows[0]+" - "+ rows[1]+" - "+ rows[2]);
-                
-                pw.close();
-
-                JOptionPane.showMessageDialog(null, "New Admin account created successfully!","Admin created", JOptionPane.INFORMATION_MESSAGE);
-                
-                   
-                    
-
-                   
-
-                }catch(Exception ex){
-                    JOptionPane.showMessageDialog(null, "Something went wrong!","Error", JOptionPane.ERROR_MESSAGE);
-                }
+            
+           
             
               
         }
@@ -229,17 +211,44 @@ public class Adminuserinfo extends JFrame implements ActionListener {
         else if(e.getSource()==delB){
             int numR = table.getSelectedRow();
             if(numR>=0){
-                m.removeRow(numR);
+               m.removeRow(numR);
+
+               try{
+                ArrayList<String> lines = new ArrayList<>();
+                try(BufferedReader br = new BufferedReader(new FileReader("data\\user_data\\user_data.txt"))){
+                    
+                    lines.addAll(br.lines().toList());
+                    br.close();
+
+                }
+                lines.remove(numR);
+                
+                try(FileWriter fw = new FileWriter("data\\user_data\\user_data.txt")){
+                    for(String l:lines){
+                        fw.write(l +"\n");
+                    }
+                
+
+                }
+                
+            }catch (Exception e4) {
+                System.out.println(e4);
+            }
+                
+            }
+            
+                
                 
 
                  
-            }
+        }
             else{
                 JOptionPane.showMessageDialog(null, "Please Select Row !");
             }
 
-        }
-        
     }
     
 }
+
+   
+

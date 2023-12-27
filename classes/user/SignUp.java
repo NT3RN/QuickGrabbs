@@ -213,9 +213,9 @@ public class SignUp implements ActionListener, ISignUp{
 
                         String timeAndDate = myDateFormat.format(myDateTime);
 
-                        pw.println("User Name: "+ username);
-                        pw.println("Password : "+ password);
-                        pw.println("Email    : "+ email);
+                        pw.println("User Name  : "+ username);
+                        pw.println("Password   : "+ password);
+                        pw.println("Email      : "+ email);
                         pw.println("Time & Date: "+ timeAndDate);
                         pw.println("***********************************");
                         pw.close();

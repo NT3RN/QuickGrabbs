@@ -2,7 +2,7 @@ package classes.admin;
 
 
 import java.lang.*;
-import java.util.ArrayList;
+
 
 import javax.swing.*;
 
@@ -13,7 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
+
 
 
 public class Adminlogin extends JFrame implements ActionListener {
@@ -128,36 +128,38 @@ public class Adminlogin extends JFrame implements ActionListener {
             else{
                 
                 try{
+                    String userNameL = "User Name  : "+userN;
+                    String passwordL = "Password   : "+passW;
                     BufferedReader br = new BufferedReader(new FileReader("data\\admin_data\\admin_data.txt"));
-                    ArrayList<String> lines = new ArrayList<>();
-                    lines.addAll(br.lines().toList());  // lines into arraylist
-
-                     
-                     // only show the even lines
-                     for (int i = 1; i< lines.size(); i+=2) {
-                          String line = lines.get(i).trim();
-                          String[] data = line.split(" - ");
-
-                          if (data.length == 3 && data[0].equals(userN)) { 
-                        
-                            if (data[1].equals(passW)) { 
+            
+                    String line;
+                    boolean found = false;
+                    while ((line = br.readLine()) != null) {
+                        if(line.equals(userNameL)){
+                            found = true;
+                            if((line = br.readLine()) != null && line.equals(passwordL)){
                                 frame.setVisible(false);
-                                new AdminWindow();
+                                
+                                new AdminWindow(); 
                                 break;
                             } else {
-                                JOptionPane.showMessageDialog(null, "Invalid Password or Username!", "Warning!", JOptionPane.ERROR_MESSAGE);
+                                JOptionPane.showMessageDialog(null, "Invalid password!", "Warning!",
+                                        JOptionPane.ERROR_MESSAGE);
                                 break;
                             }
-                         }else {
-                                JOptionPane.showMessageDialog(null, "Invalid Password or Username!", "Warning!", JOptionPane.ERROR_MESSAGE);
-                                break;
-                            }
-           
                         }
-                    br.close();
-                } catch (IOException e1) {
-                       System.out.println(e1);
                     }
+            
+                    if (!found) {
+                        JOptionPane.showMessageDialog(null, "Invalid username!", "Warning!",
+                                JOptionPane.ERROR_MESSAGE);
+                    }
+            
+                    br.close();
+                } catch(Exception ex){
+                    JOptionPane.showMessageDialog(null, "Error reading user data!", "Warning!",
+                            JOptionPane.ERROR_MESSAGE);
+                }
             }
             
             

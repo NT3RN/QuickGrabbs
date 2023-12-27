@@ -3,7 +3,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 
 import java.lang.*;
-
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 import java.awt.*;
@@ -22,7 +23,7 @@ public class Adminaddadmin extends JFrame implements ActionListener {
     private JScrollPane scroll;
     private DefaultTableModel m;
 
-    private String[] columns = {"Admin Name","Password","Email"};
+    private String[] columns = {"Admin's Record"};
     private String[] rows = new String[3];
 
     Adminaddadmin(){
@@ -134,8 +135,8 @@ public class Adminaddadmin extends JFrame implements ActionListener {
             ArrayList<String> lines = new ArrayList<>();
             lines.addAll(br.lines().toList());  // lines into arraylist
 
-            // only show the even lines
-            for (int i = 1; i< lines.size(); i+=2) {
+            
+            for (int i = 0; i< lines.size(); i++) {
             String line = lines.get(i).trim();
             String[] data = line.split("- ");
             m.addRow(data);
@@ -173,27 +174,29 @@ public class Adminaddadmin extends JFrame implements ActionListener {
             try{
                 
                 if(file.exists()==false){
-                   file.createNewFile();
+                    file.createNewFile();
                 }
-                FileWriter fw = new FileWriter(file, true);
+                FileWriter fw = new FileWriter(file,true);
                 BufferedWriter bw = new BufferedWriter(fw);
                 PrintWriter pw = new PrintWriter(bw);
-                
-                pw.println(columns[0]+" - "+ columns[1]+" - "+columns[2]);
-                pw.println(rows[0]+" - "+ rows[1]+" - "+ rows[2]);
-                
+                LocalDateTime myDateTime = LocalDateTime.now();
+                DateTimeFormatter myDateFormat = DateTimeFormatter.ofPattern("HH:mm a, dd/MM/yyyy");
+
+                String timeAndDate = myDateFormat.format(myDateTime);
+                pw.println("User Name  : "+ rows[0]);
+                pw.println("Password   : "+ rows[1]);
+                pw.println("Email      : "+ rows[2]);
+                pw.println("Time & Date: "+ timeAndDate);
+                pw.println("***********************************");
                 pw.close();
+                JOptionPane.showMessageDialog(null, "New Admin account created successfully!","User created", JOptionPane.INFORMATION_MESSAGE);
 
-                JOptionPane.showMessageDialog(null, "New Admin account created successfully!","Admin created", JOptionPane.INFORMATION_MESSAGE);
-                
-                   
-                    
-
-                   
-
-                }catch(Exception ex){
-                    JOptionPane.showMessageDialog(null, "Something went wrong!","Error", JOptionPane.ERROR_MESSAGE);
-                }
+                new Adminaddadmin();
+                w2f.setVisible(false);
+            }catch(Exception e2){
+                System.out.println(e2);
+            }
+            
         }
         else if(e.getSource()==clB){
             uT.setText("");
@@ -205,27 +208,27 @@ public class Adminaddadmin extends JFrame implements ActionListener {
             if(numR>=0){
                 m.removeRow(numR);
                 
-                // try{
-                //     ArrayList<String> lines = new ArrayList<>();
-                //     try(BufferedReader br = new BufferedReader(new FileReader("data\\admin_data\\admin_data.txt"))){
+                try{
+                    ArrayList<String> lines = new ArrayList<>();
+                    try(BufferedReader br = new BufferedReader(new FileReader("data\\admin_data\\admin_data.txt"))){
                         
-                //         lines.addAll(br.lines().toList());
-                //         br.close();
+                        lines.addAll(br.lines().toList());
+                        br.close();
 
-                //     }
-                //     lines.remove(numR);
-                //     lines.remove(numR+1);
-                //     try(FileWriter fw = new FileWriter("data\\admin_data\\admin_data.txt")){
-                //         for(String l:lines){
-                //             fw.write(l +"\n");
-                //         }
+                    }
+                    lines.remove(numR);
+                    
+                    try(FileWriter fw = new FileWriter("data\\admin_data\\admin_data.txt")){
+                        for(String l:lines){
+                            fw.write(l +"\n");
+                        }
                     
 
-                //     }
+                    }
                     
-                // }catch (Exception e4) {
-                //     System.out.println(e4);
-                // }
+                }catch (Exception e4) {
+                    System.out.println(e4);
+                }
 
                  
             }
