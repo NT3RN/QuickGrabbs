@@ -12,6 +12,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
 import interfaces.*;
+import classes.user.*;
 
 
 public class AdminUserInfo extends JFrame implements ActionListener {
