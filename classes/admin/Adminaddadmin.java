@@ -1,5 +1,6 @@
 package classes.admin;
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
 import java.lang.*;
@@ -19,6 +20,7 @@ public class Adminaddadmin extends JFrame implements ActionListener {
     private JLabel WtextL, imageL,uL,pL,eL;
     private JTextField uT,pT,eT;
     private JButton backB,addB,delB,clB;
+    private JButton logOutB;
     private JTable table;
     private JScrollPane scroll;
     private DefaultTableModel m;
@@ -127,6 +129,16 @@ public class Adminaddadmin extends JFrame implements ActionListener {
         scroll.setBounds(10,280,450,250);
         c.add(scroll);
 
+        //logout button
+        logOutB = new JButton("Log Out");
+        logOutB.setForeground(Color.BLACK);
+        logOutB.setFont(f);
+        logOutB.setBounds(700, 10, 70, 25);
+        logOutB.setBorder(new LineBorder(Color.decode("#B2BF3D"), 2));
+        logOutB.setBackground(Color.decode("#B2BF3D"));
+        logOutB.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        logOutB.addActionListener(this);
+        c.add(logOutB);
 
         
 
@@ -202,6 +214,10 @@ public class Adminaddadmin extends JFrame implements ActionListener {
             uT.setText("");
             pT.setText("");
             eT.setText("");
+        }
+        else if(e.getSource()==logOutB){
+            c.setVisible(false);
+            new Adminlogin();
         }
         else if(e.getSource()==delB){
             int numR = table.getSelectedRow();

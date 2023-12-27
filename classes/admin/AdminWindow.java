@@ -1,6 +1,8 @@
 package classes.admin;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
+
 import java.lang.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,6 +14,7 @@ public class AdminWindow extends JFrame implements ActionListener {
     private Font f;
     private JLabel WtextL, imageL;
     private JButton userB,backB,  adminB;
+    private JButton logOutB;
 
     AdminWindow(){
         wf = new JFrame("Admin Window");
@@ -55,6 +58,17 @@ public class AdminWindow extends JFrame implements ActionListener {
         backB.setFont(f);
         c.add(backB);
         backB.addActionListener(this);
+        
+        //logout button
+        logOutB = new JButton("Log Out");
+        logOutB.setForeground(Color.BLACK);
+        logOutB.setFont(f);
+        logOutB.setBounds(700, 10, 70, 25);
+        logOutB.setBorder(new LineBorder(Color.decode("#B2BF3D"), 2));
+        logOutB.setBackground(Color.decode("#B2BF3D"));
+        logOutB.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        logOutB.addActionListener(this);
+        c.add(logOutB);
 
 
         //add image in background
@@ -79,7 +93,9 @@ public class AdminWindow extends JFrame implements ActionListener {
             uw.setVisible(false);
             wf.setVisible(false);
         }
-        
+        else if(e.getSource()==logOutB){
+            new Adminlogin();
+            wf.setVisible(false);}
        
         else if(e.getSource()==adminB){
             Adminaddadmin a = new Adminaddadmin();
