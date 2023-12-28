@@ -1,6 +1,7 @@
 package classes.user;
 import interfaces.*;
 import classes.admin.Adminlogin;
+import classes.resturants.ResturantName;
 
 import java.awt.Color;
 import java.awt.Cursor;
@@ -272,8 +273,9 @@ public class Login implements ActionListener, Ilogin {
                                     found = true;
                                     if((line = reader.readLine()) != null && line.equals(passwordL)){
                                         frame.setVisible(false);
-                                        JOptionPane.showMessageDialog(null, "login working", "eaah!!!", JOptionPane.INFORMATION_MESSAGE);
-                                        new Login(); //TODO change to next page
+                                        new ResturantName(user); //passed User name to next page
+                                        // JOptionPane.showMessageDialog(null, "login working", "eaah!!!", JOptionPane.INFORMATION_MESSAGE);
+                                        // new Login(); //TODO change to next page
                                         break;
                                     } else {
                                         JOptionPane.showMessageDialog(null, "Invalid password!", "Warning!",
