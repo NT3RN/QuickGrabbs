@@ -41,7 +41,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 	private JMenu users;
 	private JMenuItem profile, logout;
 	
-	private String f ="Faysal";
+	private String f ="Tanbin";
 	
 	public ResturantName (String user)
 	{
@@ -51,7 +51,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		Image background = new ImageIcon("icons/restbackground.png").getImage();
 		frame.setContentPane(new ImagePanel(background));
 		
-		ImageIcon framelogo = new ImageIcon("icons/framelogo.jpg");
+		ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
 		Image image1 = new ImageIcon("icons/kacchibhai.png").getImage().getScaledInstance(240, 180, Image.SCALE_DEFAULT);
 		ImageIcon kacchiBhaiLogo = new ImageIcon(image1);
 		kacchiBhai = new JLabel("Kacchi Bhai");
@@ -175,7 +175,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 	
 	public static void main (String [] args)
 	{
-		new ResturantName("Faysal");
+		new ResturantName("Tanbin");
 	}
 
 	@Override
