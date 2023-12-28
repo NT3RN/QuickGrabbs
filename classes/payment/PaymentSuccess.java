@@ -101,10 +101,6 @@ public class PaymentSuccess implements ActionListener, IPaymentSuccess{
 		frame.setVisible(true);
 	}
 
-	public static void main(String[] args) {
-		
-		new PaymentSuccess(100.0,"Hasib");
-	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {

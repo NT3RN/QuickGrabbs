@@ -1,8 +1,6 @@
 package classes.admin;
 
 
-import java.lang.*;
-
 
 import javax.swing.*;
 

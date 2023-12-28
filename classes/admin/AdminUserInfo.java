@@ -3,7 +3,7 @@ import javax.swing.*;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
-import java.lang.*;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
-import interfaces.*;
+
 
 
 public class AdminUserInfo extends JFrame implements ActionListener {

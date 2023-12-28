@@ -26,7 +26,6 @@ public class Payment implements ActionListener, IPayment{
 	
 	private JFrame frame;
 	private JLabel cyp;
-	private JLabel wao2;
 	private JLabel pfuycd;
 	private JLabel noc;
 	private JLabel cn;
@@ -77,12 +76,6 @@ public class Payment implements ActionListener, IPayment{
 		frame.add(cyp);
 		
 	
-		
-		
-		// ImageIcon waoIcon2 = new ImageIcon("icons/wao2.png");
-		// wao2= new JLabel(waoIcon2);
-		// wao2.setBounds(480, 80, 500, 50);
-		// frame.add(wao2);
 		
 		
 		pfuycd = new JLabel("Please Fillup Your Card Details Below---");
@@ -252,8 +245,8 @@ public class Payment implements ActionListener, IPayment{
 			{
 				try 
 				{
-					long m = Long.parseLong(b);
-					long n = Long.parseLong(d);
+					// long m = Long.parseLong(b);
+					// long n = Long.parseLong(d);
 					
 					if(b.length()>16)
 					{
