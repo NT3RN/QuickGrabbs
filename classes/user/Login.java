@@ -1,7 +1,7 @@
 package classes.user;
 import interfaces.*;
-import classes.admin.Adminlogin;
-import classes.resturants.ResturantName;
+import classes.admin.*;
+import classes.resturants.*;
 
 import java.awt.Color;
 import java.awt.Cursor;
