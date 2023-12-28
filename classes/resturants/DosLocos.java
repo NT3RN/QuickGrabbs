@@ -73,7 +73,7 @@ public class DosLocos implements ActionListener, IDosLocos {
 		f= user;
 		
 		frame = new JFrame("Dos Locos Menu");
-		ImageIcon framelogo = new ImageIcon("icons/framelogo.jpg");
+		ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
 		Image background = new ImageIcon("icons/restbackground.png").getImage();
 		frame.setContentPane(new ImagePanel(background));
 		
@@ -245,8 +245,6 @@ public class DosLocos implements ActionListener, IDosLocos {
 		placeOrder.setBackground(Color.decode("#DBA39A"));
 		placeOrder.setForeground(Color.black);
 		placeOrder.setBorder(BorderFactory.createEmptyBorder());
-		//placeOrder.setBorder(BorderFactory.createEtchedBorder(0, Color.green, Color.red));
-		//placeOrder.setIcon(resturantLogo);
 		placeOrder.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		placeOrder.addActionListener(this);
 		frame.add(placeOrder);
@@ -317,7 +315,7 @@ public class DosLocos implements ActionListener, IDosLocos {
 					tacoAmount;
 			if (totalAmount!=0)
 			{
-				int x = JOptionPane.showConfirmDialog(null, "Your Bill = "+totalAmount+" tk. Confirm Order?"," Conformation of Oder", 0);
+				int x = JOptionPane.showConfirmDialog(null, "Your Bill = "+totalAmount+" tk. Confirm Order?"," Confirmation of Order", 0);
 				if (x==0) 
 				{
 					frame.setVisible(false);

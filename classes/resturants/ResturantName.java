@@ -12,8 +12,6 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JColorChooser;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -34,14 +32,10 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 	private JLabel momo;
 	private JLabel twinPeaks;
 	private JLabel dosLocos;
-	
-	private JButton goBack;
-	
 	private JMenuBar menuBar;  
 	private JMenu users;
 	private JMenuItem profile, logout;
-	
-	private String f ="Tanbin";
+	private String f;
 	
 	public ResturantName (String user)
 	{
@@ -52,6 +46,8 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		frame.setContentPane(new ImagePanel(background));
 		
 		ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
+
+
 		Image image1 = new ImageIcon("icons/kacchibhai.png").getImage().getScaledInstance(240, 180, Image.SCALE_DEFAULT);
 		ImageIcon kacchiBhaiLogo = new ImageIcon(image1);
 		kacchiBhai = new JLabel("Kacchi Bhai");
@@ -133,31 +129,22 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		profile = new JMenuItem ("Profile");
 		profile.addActionListener(this);
 		profile.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		profile.setVisible(false);
+		// profile.setVisible(false);
 		
 		logout = new JMenuItem ("Logout");
 		logout.addActionListener(this);
 		logout.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		
-		users = new JMenu("User");
+		users = new JMenu(f);
 		users.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		users.setBorder(new EmptyBorder(0, 10, 0, 10));
 		users.setForeground(Color.black);
 		users.add(profile);
 		users.add(logout);
 		
-		goBack= new JButton("Previous page");
-		goBack.setFocusable(false);
-		goBack.setBackground(Color.decode("#FFD4B2"));
-		goBack.setForeground(Color.black);
-		goBack.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		goBack.setBorder(BorderFactory.createEmptyBorder());
-		goBack.addActionListener(this);
-		
 		
 		menuBar = new JMenuBar();
 		menuBar.add(users);
-		menuBar.add(goBack);
 		menuBar.setBackground(Color.decode("#FFD4B2"));
 		menuBar.setBorder(BorderFactory.createEmptyBorder());
 		frame.setJMenuBar(menuBar);
@@ -173,10 +160,6 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		frame.setVisible(true);
 	}
 	
-	public static void main (String [] args)
-	{
-		new ResturantName("Tanbin");
-	}
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
