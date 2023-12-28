@@ -235,7 +235,7 @@ public class TwinPeaks implements ActionListener, ITwinPeaks{
 		
 		menuBar = new JMenuBar();
 		menuBar.add(users);
-		menuBar.add(goBack);
+		// menuBar.add(goBack);
 		menuBar.setBackground(Color.decode("#FFD4B2"));
 		menuBar.setBorder(BorderFactory.createEmptyBorder());
 		frame.setJMenuBar(menuBar);
@@ -247,8 +247,6 @@ public class TwinPeaks implements ActionListener, ITwinPeaks{
 		placeOrder.setBackground(Color.decode("#DBA39A"));
 		placeOrder.setForeground(Color.black);
 		placeOrder.setBorder(BorderFactory.createEmptyBorder());
-		//placeOrder.setBorder(BorderFactory.createEtchedBorder(0, Color.green, Color.red));
-		//placeOrder.setIcon(resturantLogo);
 		placeOrder.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		placeOrder.addActionListener(this);
 		frame.add(placeOrder);

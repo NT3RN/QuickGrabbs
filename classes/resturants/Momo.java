@@ -231,7 +231,7 @@ public class Momo implements ActionListener, IMomo{
 		
 		
 		menuBar = new JMenuBar();
-		menuBar.add(users);
+		// menuBar.add(users);
 		menuBar.add(goBack);
 		menuBar.setBackground(Color.decode("#FFD4B2"));
 		menuBar.setBorder(BorderFactory.createEmptyBorder());
@@ -244,8 +244,6 @@ public class Momo implements ActionListener, IMomo{
 		placeOrder.setBackground(Color.decode("#DBA39A"));
 		placeOrder.setForeground(Color.black);
 		placeOrder.setBorder(BorderFactory.createEmptyBorder());
-		//placeOrder.setBorder(BorderFactory.createEtchedBorder(0, Color.green, Color.red));
-		//placeOrder.setIcon(resturantLogo);
 		placeOrder.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		placeOrder.addActionListener(this);
 		frame.add(placeOrder);

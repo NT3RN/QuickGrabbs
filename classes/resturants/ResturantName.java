@@ -1,6 +1,8 @@
 package classes.resturants;
 
 import interfaces.*;
+import classes.user.*;
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -11,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import javax.swing.BorderFactory;
+import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -19,8 +22,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.border.EmptyBorder;
 
-import classes.user.ImagePanel;
-import classes.user.Login;
+
 
 public class ResturantName implements ActionListener, MouseListener, IResturantName{
 	
@@ -33,7 +35,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 	private JLabel twinPeaks;
 	private JLabel dosLocos;
 	private JMenuBar menuBar;  
-	private JMenu users;
+	private JMenu users, creators;
 	private JMenuItem profile, logout;
 	private String f;
 	
@@ -129,7 +131,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		profile = new JMenuItem ("Profile");
 		profile.addActionListener(this);
 		profile.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		// profile.setVisible(false);
+
 		
 		logout = new JMenuItem ("Logout");
 		logout.addActionListener(this);
@@ -137,14 +139,21 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		
 		users = new JMenu(f);
 		users.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		users.setBorder(new EmptyBorder(0, 10, 0, 10));
+		users.setBorder(new EmptyBorder(0, 20, 0, 20));
 		users.setForeground(Color.black);
 		users.add(profile);
 		users.add(logout);
 		
+		creators = new JMenu("About Us");
+		creators.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		creators.setBorder(new EmptyBorder(0, 10, 0, 10));
+		creators.setForeground(Color.black);
+
 		
 		menuBar = new JMenuBar();
+		menuBar.add(Box.createHorizontalGlue());
 		menuBar.add(users);
+		menuBar.add(creators);
 		menuBar.setBackground(Color.decode("#FFD4B2"));
 		menuBar.setBorder(BorderFactory.createEmptyBorder());
 		frame.setJMenuBar(menuBar);
@@ -167,6 +176,10 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		{
 			frame.setVisible(false);
 			new Login();
+		}
+		else if(e.getSource()==profile){
+			frame.setVisible(false);
+			new UProfile(f);
 		}
 		
 	}

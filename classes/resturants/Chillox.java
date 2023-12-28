@@ -230,7 +230,7 @@ public class Chillox implements ActionListener,IChillox{
 		
 		
 		menuBar = new JMenuBar();
-		menuBar.add(users);
+		// menuBar.add(users);
 		menuBar.add(goBack);
 		menuBar.setBackground(Color.decode("#FFD4B2"));
 		menuBar.setBorder(BorderFactory.createEmptyBorder());
