@@ -73,7 +73,7 @@ public class TwinPeaks implements ActionListener, ITwinPeaks{
 		f= user;
 		
 		frame = new JFrame("Twin Peaks Menu");
-		ImageIcon framelogo = new ImageIcon("icons/framelogo.jpg");
+		ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
 		Image background = new ImageIcon("icons/restbackground.png").getImage();
 		frame.setContentPane(new ImagePanel(background));
 		
@@ -93,7 +93,7 @@ public class TwinPeaks implements ActionListener, ITwinPeaks{
 		sLabel.setBounds(20, 20, 340, 140);
 		frame.add(sLabel);
 		
-		sPrice = new JLabel("Price: 1499.99.99 tk");
+		sPrice = new JLabel("Price: 1499.99 tk");
 		sPrice.setBounds(260, 170, 150, 20);
 		sPrice.setBackground(Color.black);
 		sPrice.setForeground(Color.white);
@@ -234,8 +234,8 @@ public class TwinPeaks implements ActionListener, ITwinPeaks{
 		
 		
 		menuBar = new JMenuBar();
-		menuBar.add(users);
-		// menuBar.add(goBack);
+		// menuBar.add(users);
+		menuBar.add(goBack);
 		menuBar.setBackground(Color.decode("#FFD4B2"));
 		menuBar.setBorder(BorderFactory.createEmptyBorder());
 		frame.setJMenuBar(menuBar);

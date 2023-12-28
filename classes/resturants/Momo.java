@@ -73,7 +73,7 @@ public class Momo implements ActionListener, IMomo{
 		f= user;
 		
 		frame = new JFrame("Momos Menu");
-		ImageIcon framelogo = new ImageIcon("icons/framelogo.jpg");
+		ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
 		Image background = new ImageIcon("icons/restbackground.png").getImage();
 		frame.setContentPane(new ImagePanel(background));
 		

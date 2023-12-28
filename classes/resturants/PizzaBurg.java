@@ -73,7 +73,7 @@ public class PizzaBurg implements ActionListener, IPizzaBurg {
 		f= user;
 		
 		frame = new JFrame("PizzaBurg Menu");
-		ImageIcon framelogo = new ImageIcon("icons/framelogo.jpg");
+		ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
 		Image background = new ImageIcon("icons/restbackground.png").getImage();
 		frame.setContentPane(new ImagePanel(background));
 		
