@@ -274,8 +274,7 @@ public class Login implements ActionListener, Ilogin {
                                     if((line = reader.readLine()) != null && line.equals(passwordL)){
                                         frame.setVisible(false);
                                         new ResturantName(user); //passed User name to next page
-                                        // JOptionPane.showMessageDialog(null, "login working", "eaah!!!", JOptionPane.INFORMATION_MESSAGE);
-                                        // new Login(); //TODO change to next page
+
                                         break;
                                     } else {
                                         JOptionPane.showMessageDialog(null, "Invalid password!", "Warning!",
@@ -328,7 +327,6 @@ public class Login implements ActionListener, Ilogin {
                 else if (e.getSource() == adminButton){
                 frame.setVisible(false);
                 new Adminlogin();
-                // System.exit(0); temporarily TODO change to admin login Aditto
                     }   
                 
         }
