@@ -58,15 +58,15 @@ public class Payment implements ActionListener, IPayment{
 		
 		ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
 		
-		Image image1 = new ImageIcon("icons/mainIcon.png").getImage().getScaledInstance(300, 450, Image.SCALE_DEFAULT);
-		ImageIcon mainIcon = new ImageIcon(image1);
+		// Image image1 = new ImageIcon("icons/mainIcon.png").getImage().getScaledInstance(300, 450, Image.SCALE_DEFAULT);
+		// ImageIcon mainIcon = new ImageIcon(image1);
 
 		Image background = new ImageIcon("icons/CARDPAYMENT.png").getImage();
 		frame.setContentPane(new ImagePanel(background));
 		
-		mi = new JLabel(mainIcon);
-		mi.setBounds(20, 10, 300, 450);
-		frame.add(mi);
+		// mi = new JLabel(mainIcon);
+		// mi.setBounds(20, 10, 300, 450);
+		// frame.add(mi);
 		
 		
 		cyp = new JLabel("Complete Your Payment");
