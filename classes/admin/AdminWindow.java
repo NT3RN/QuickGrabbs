@@ -2,6 +2,7 @@ package classes.admin;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
+import classes.user.*;
 
 import java.lang.*;
 import java.awt.*;
@@ -15,8 +16,11 @@ public class AdminWindow extends JFrame implements ActionListener {
     private JLabel WtextL, imageL;
     private JButton userB,backB,  adminB;
     private JButton logOutB;
+    private String aN;
+    AdminWindow(String AdminName){
+        aN = AdminName;
+        //new Admin(name, password);
 
-    AdminWindow(){
         wf = new JFrame("Admin Window");
         wf.setIconImage(new ImageIcon(getClass().getResource("/icons/framelogo.png")).getImage());
 
@@ -32,9 +36,9 @@ public class AdminWindow extends JFrame implements ActionListener {
 
         f = new Font("Arial",Font.BOLD,11);
 
-        WtextL = new JLabel("Welcome Back");
-        WtextL.setBounds(259,50,300,50);
-        WtextL.setFont(new Font("Bahnschrift", Font.PLAIN, 40));
+        WtextL = new JLabel("Welcome Back, "+aN+"!");
+        WtextL.setBounds(230,50,400,50);
+        WtextL.setFont(new Font("Bahnschrift", Font.PLAIN, 30));
         c.add(WtextL);
 
         //user info button
@@ -89,7 +93,7 @@ public class AdminWindow extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==userB){
-            AdminUserInfo uw= new AdminUserInfo();
+            AdminUserInfo uw= new AdminUserInfo(aN);
             uw.setVisible(false);
             wf.setVisible(false);
         }
@@ -98,7 +102,7 @@ public class AdminWindow extends JFrame implements ActionListener {
             wf.setVisible(false);}
        
         else if(e.getSource()==adminB){
-            AdminInfoAdd a = new AdminInfoAdd();
+            AdminInfoAdd a = new AdminInfoAdd(aN);
             a.setVisible(false);
             wf.setVisible(false);
         }

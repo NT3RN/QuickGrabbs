@@ -120,7 +120,7 @@ public class Adminlogin extends JFrame implements ActionListener {
             String passW = pf.getText();
 
             if(userN.equals("admin") && passW.equals("admin")){
-             new AdminWindow(); // move to another window
+             new AdminWindow(userN); // move to another window
              
              frame.setVisible(false);
 
@@ -140,7 +140,7 @@ public class Adminlogin extends JFrame implements ActionListener {
                             if((line = br.readLine()) != null && line.equals(passwordL)){
                                 frame.setVisible(false);
                                 
-                                new AdminWindow(); 
+                                new AdminWindow(userN); 
                                 break;
                             } else {
                                 JOptionPane.showMessageDialog(null, "Invalid password!", "Warning!",

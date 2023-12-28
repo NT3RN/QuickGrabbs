@@ -27,9 +27,10 @@ public class AdminInfoAdd extends JFrame implements ActionListener {
 
     private String[] columns = {"Admin's Record"};
     private String[] rows = new String[3];
+    private String aN;
 
-    AdminInfoAdd(){
-
+    AdminInfoAdd(String adminName){
+        aN = adminName;
         w2f=new JFrame("Admin Information");
         w2f.setIconImage(new ImageIcon(getClass().getResource("/icons/framelogo.png")).getImage());
 
@@ -173,7 +174,7 @@ public class AdminInfoAdd extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource()==backB){
-            AdminWindow aw = new AdminWindow();
+            AdminWindow aw = new AdminWindow(aN);
             aw.setVisible(false);
             w2f.setVisible(false);
         }
@@ -203,7 +204,7 @@ public class AdminInfoAdd extends JFrame implements ActionListener {
                 pw.close();
                 JOptionPane.showMessageDialog(null, "New Admin account created successfully!","Admin created", JOptionPane.INFORMATION_MESSAGE);
 
-                new AdminInfoAdd();
+                new AdminInfoAdd(aN);
                 w2f.setVisible(false);
             }catch(Exception e2){
                 System.out.println(e2);
