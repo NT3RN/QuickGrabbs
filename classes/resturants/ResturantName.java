@@ -59,6 +59,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		kacchiBhai.setHorizontalTextPosition(JLabel.CENTER);
 		kacchiBhai.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		kacchiBhai.setFont(new Font("Grandview",Font.PLAIN,20));
+		kacchiBhai.setBorder(new EmptyBorder(0, 30, 0, 0));
 		kacchiBhai.addMouseListener(this);
 		frame.add(kacchiBhai);
 		
@@ -72,6 +73,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		pizzaBurg.setHorizontalTextPosition(JLabel.CENTER);
 		pizzaBurg.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		pizzaBurg.setFont(new Font("Grandview",Font.PLAIN,20));
+		pizzaBurg.setBorder(new EmptyBorder(0, 30, 0, 0));
 		pizzaBurg.addMouseListener(this);
 		frame.add(pizzaBurg);
 		
@@ -85,6 +87,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		chillox.setHorizontalTextPosition(JLabel.CENTER);
 		chillox.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		chillox.setFont(new Font("Grandview",Font.PLAIN,20));
+		chillox.setBorder(new EmptyBorder(0, 30, 0, 0));
 		chillox.addMouseListener(this);
 		frame.add(chillox);
 		
@@ -98,6 +101,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		momo.setHorizontalTextPosition(JLabel.CENTER);
 		momo.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		momo.setFont(new Font("Grandview",Font.PLAIN,20));
+		momo.setBorder(new EmptyBorder(0, 30, 0, 0));
 		momo.addMouseListener(this);
 		frame.add(momo);
 
@@ -111,6 +115,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		twinPeaks.setHorizontalTextPosition(JLabel.CENTER);
 		twinPeaks.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		twinPeaks.setFont(new Font("Grandview",Font.PLAIN,20));
+		twinPeaks.setBorder(new EmptyBorder(0, 30, 0, 0));
 		twinPeaks.addMouseListener(this);
 		frame.add(twinPeaks);
 		
@@ -124,6 +129,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		dosLocos.setHorizontalTextPosition(JLabel.CENTER);
 		dosLocos.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		dosLocos.setFont(new Font("Grandview",Font.PLAIN,20));
+		dosLocos.setBorder(new EmptyBorder(0, 30, 0, 0));
 		dosLocos.addMouseListener(this);
 		frame.add(dosLocos);
 
