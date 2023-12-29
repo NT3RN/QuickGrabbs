@@ -322,9 +322,9 @@ public class SultansDine implements ActionListener,IKacchiBhai{
 					 new Payment(totalAmount, "KacchiBhai",f);
 					
 					try {
-						File newfile = new File("data\\temp\\Last.txt"); 
+						File newfile = new File("data\\otherData\\Last.txt"); 
 						newfile.createNewFile();
-						FileWriter file = new FileWriter("data\\temp\\Last.txt");
+						FileWriter file = new FileWriter("data\\otherData\\Last.txt");
 						
 						file.write("kacchi Biriyani--- "+a+" Packet----"+kacchiBiriyaniAmount+" tk."
 						+"\nTehri----"+b+" Packet---"+tehriAmount+" tk."

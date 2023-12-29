@@ -257,9 +257,9 @@ public class Payment implements ActionListener, IPayment{
 					}
 					try
 					{
-						File newfile = new File("data\\temp\\Last2.txt"); 
+						File newfile = new File("data\\otherData\\Last2.txt"); 
 						newfile.createNewFile();
-						FileWriter writeFile = new FileWriter("data\\temp\\Last2.txt");
+						FileWriter writeFile = new FileWriter("data\\otherData\\Last2.txt");
 						
 						writeFile.write("Name on Card : "+a+".\nCard Number :"+b+
 								".\nValid On : "+c+".\nCVV Code : "+d+".");

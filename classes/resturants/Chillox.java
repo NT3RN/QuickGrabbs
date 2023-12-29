@@ -318,9 +318,9 @@ public class Chillox implements ActionListener,IChillox{
 					 new Payment(totalAmount,"Chillox",f);
 					
 					try {
-						File newfile = new File("data\\temp\\Last.txt"); 
+						File newfile = new File("data\\otherData\\Last.txt"); 
 						newfile.createNewFile();
-						FileWriter file = new FileWriter("data\\temp\\Last.txt");
+						FileWriter file = new FileWriter("data\\otherData\\Last.txt");
 						
 						file.write("All Flavoured Shakes--- "+a+" Piece----"+sAmount+" tk."
 						+"\nHam Burgers----"+b+" Piece---"+hAmount+" tk."

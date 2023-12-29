@@ -121,7 +121,7 @@ public class PaymentSuccess implements ActionListener, IPaymentSuccess{
 			try 
 			{
 
-			File newfile = new File("data\\temp\\Last.txt"); 
+			File newfile = new File("data\\otherData\\Last.txt"); 
 			Scanner sc = new Scanner(newfile);
 			
 			String line1 = null;
@@ -144,7 +144,7 @@ public class PaymentSuccess implements ActionListener, IPaymentSuccess{
 
 			}
 			sc.close();  
-			File newfile2 = new File("data\\temp\\Last2.txt");
+			File newfile2 = new File("data\\otherData\\Last2.txt");
 			Scanner sc2 = new Scanner(newfile2);
 			while(sc2.hasNext())
 			{

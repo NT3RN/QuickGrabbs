@@ -321,9 +321,9 @@ public class Momo implements ActionListener, IMomo{
 					new Payment(totalAmount, "Momo",f);
 					
 					try {
-						File newfile = new File("data\\temp\\Last.txt"); 
+						File newfile = new File("data\\otherData\\Last.txt"); 
 						newfile.createNewFile();
-						FileWriter file = new FileWriter("data\\Last.txt");
+						FileWriter file = new FileWriter("data\\otherData\\Last.txt");
 						
 						file.write("Sweet Danish--- "+a+" Piece----"+sdAmount+" tk."
 						+"\nMomos----"+b+" Plates---"+mAmount+" tk."
