@@ -3,6 +3,7 @@ import interfaces.*;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -33,6 +34,9 @@ public class UProfile implements ActionListener,IUProfile{
 		
 		ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
 		ImageIcon previousImage = new ImageIcon("icons/previous.png");
+		Image background = new ImageIcon("icons/main2.jpg").getImage();
+		frame.setContentPane(new ImagePanel(background));
+		
 		
 		
 		display = new JTextArea (5, 5);
