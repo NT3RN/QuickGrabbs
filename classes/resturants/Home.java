@@ -50,8 +50,21 @@ public class Home implements ActionListener, MouseListener, IHome{
 		ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
 
 
-		Image image1 = new ImageIcon("icons/kacchibhai.png").getImage().getScaledInstance(240, 180, Image.SCALE_DEFAULT);
-		ImageIcon kacchiBhaiLogo = new ImageIcon(image1);
+		Image image1 = new ImageIcon("icons/pizzaburg.jpeg").getImage().getScaledInstance(240, 180, Image.SCALE_SMOOTH);
+		ImageIcon pizzaBurgLogo = new ImageIcon(image1);
+		pizzaBurg = new JLabel("PizzaBurg");
+		pizzaBurg.setIcon(pizzaBurgLogo);
+		pizzaBurg.setForeground(Color.CYAN);
+		pizzaBurg.setVerticalTextPosition(JLabel.BOTTOM);
+		pizzaBurg.setHorizontalTextPosition(JLabel.CENTER);
+		pizzaBurg.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		pizzaBurg.setFont(new Font("Grandview",Font.PLAIN,20));
+		pizzaBurg.setBorder(new EmptyBorder(0, 30, 0, 0));
+		pizzaBurg.addMouseListener(this);
+		frame.add(pizzaBurg);
+
+		Image image2 = new ImageIcon("icons/kacchibhai.png").getImage().getScaledInstance(240, 180, Image.SCALE_DEFAULT);
+		ImageIcon kacchiBhaiLogo = new ImageIcon(image2);
 		kacchiBhai = new JLabel("Kacchi Bhai");
 		kacchiBhai.setIcon(kacchiBhaiLogo);
 		kacchiBhai.setForeground(Color.CYAN);
@@ -63,19 +76,6 @@ public class Home implements ActionListener, MouseListener, IHome{
 		kacchiBhai.addMouseListener(this);
 		frame.add(kacchiBhai);
 		
-		
-		Image image2 = new ImageIcon("icons/pizzaburg.jpeg").getImage().getScaledInstance(240, 180, Image.SCALE_SMOOTH);
-		ImageIcon pizzaBurgLogo = new ImageIcon(image2);
-		pizzaBurg = new JLabel("PizzaBurg");
-		pizzaBurg.setIcon(pizzaBurgLogo);
-		pizzaBurg.setForeground(Color.CYAN);
-		pizzaBurg.setVerticalTextPosition(JLabel.BOTTOM);
-		pizzaBurg.setHorizontalTextPosition(JLabel.CENTER);
-		pizzaBurg.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		pizzaBurg.setFont(new Font("Grandview",Font.PLAIN,20));
-		pizzaBurg.setBorder(new EmptyBorder(0, 30, 0, 0));
-		pizzaBurg.addMouseListener(this);
-		frame.add(pizzaBurg);
 		
 		
 		Image image3 = new ImageIcon("icons/chillox.png").getImage().getScaledInstance(240, 180, Image.SCALE_SMOOTH);

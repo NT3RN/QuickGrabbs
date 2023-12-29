@@ -54,7 +54,7 @@ public class Momo implements ActionListener, IMomo{
 	private JComboBox<String> ddNumber;
 	private JComboBox<String> bfcNumber;
 	
-	private JButton goBack;
+	private JButton previous;
 	private JButton placeOrder;
 	
 	private JMenuBar menuBar;  
@@ -221,18 +221,18 @@ public class Momo implements ActionListener, IMomo{
 		users.add(logout);
 		
 		
-		goBack= new JButton("Previous page");
-		goBack.setFocusable(false);
-		goBack.setBackground(Color.decode("#FFD4B2"));
-		goBack.setForeground(Color.black);
-		goBack.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		goBack.setBorder(BorderFactory.createEmptyBorder());
-		goBack.addActionListener(this);
+		previous= new JButton("Previous page");
+		previous.setFocusable(false);
+		previous.setBackground(Color.decode("#FFD4B2"));
+		previous.setForeground(Color.black);
+		previous.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		previous.setBorder(BorderFactory.createEmptyBorder());
+		previous.addActionListener(this);
 		
 		
 		menuBar = new JMenuBar();
 		// menuBar.add(users);
-		menuBar.add(goBack);
+		menuBar.add(previous);
 		menuBar.setBackground(Color.decode("#FFD4B2"));
 		menuBar.setBorder(BorderFactory.createEmptyBorder());
 		frame.setJMenuBar(menuBar);
@@ -268,7 +268,7 @@ public class Momo implements ActionListener, IMomo{
 			new Login();
 		}
 		
-		else if (e.getSource()==goBack)
+		else if (e.getSource()==previous)
 		{
 			new Home(f);
 			frame.setVisible(false);
