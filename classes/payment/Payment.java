@@ -2,6 +2,7 @@ package classes.payment;
 import interfaces.*;
 import classes.resturants.*;
 import classes.user.*;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Image;
@@ -31,13 +32,11 @@ public class Payment implements ActionListener, IPayment{
 	private JLabel cn;
 	private JLabel vn;
 	private JLabel cvvc;
-	private JLabel mi;
-	
+
 	private JTextField tfUName;
 	private JTextField tfcn;
 	private JTextField tfvo;
 	private JPasswordField pfcvvc;
-	
 	private JButton cpB;
 	private JButton exitButton;
 	private JButton previous;

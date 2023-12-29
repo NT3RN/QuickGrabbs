@@ -1,5 +1,8 @@
 package classes.payment;
+import classes.resturants.*;
+import classes.user.*;
 import interfaces.*;
+
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
@@ -17,8 +20,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
-import classes.resturants.ResturantName;
-import classes.user.ImagePanel;
 
 public class PaymentSuccess implements ActionListener, IPaymentSuccess{
 
