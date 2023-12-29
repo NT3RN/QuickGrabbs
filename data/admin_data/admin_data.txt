@@ -13,8 +13,3 @@ Password   : 1234
 Email      : nafim@gmail.com
 Time & Date: 09:45 AM, 27/12/2023
 ***********************************
-Admin Name : a1
-Password   : a1
-Email      : a1
-Time & Date: 10:42 AM, 27/12/2023
-***********************************
