@@ -53,10 +53,10 @@ public class AdminWindow extends JFrame implements ActionListener {
         adminB.addActionListener(this);
 
 
-        // //Back button
-        // backB = new JButton("Back");
-        // backB.setBounds(680,500,90,30);
-        // backB.setFont(f);
+        //Back button
+        backB = new JButton("Back");
+        backB.setBounds(680,500,90,30);
+        backB.setFont(f);
         // c.add(backB);
         // backB.addActionListener(this);
         
