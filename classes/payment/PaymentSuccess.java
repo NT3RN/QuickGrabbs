@@ -167,8 +167,8 @@ public class PaymentSuccess implements ActionListener, IPaymentSuccess{
 					line6+"\n"+
 					line7+"\n"+
 					line8+"\n"+
-					line9+"\n////////////////////////////\n"+
-					"\nThank You for using our service :) ");
+					line9+"\n"+
+					"\nThank You for choosing QuickGrabbs!");
 			
 			writeFile.close();
 			
