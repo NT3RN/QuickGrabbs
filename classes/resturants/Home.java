@@ -20,6 +20,7 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.border.EmptyBorder;
 
 
@@ -36,7 +37,7 @@ public class Home implements ActionListener, MouseListener, IHome{
 	private JLabel dosLocos;
 	private JMenuBar menuBar;  
 	private JMenu users, creators;
-	private JMenuItem profile, logout;
+	private JMenuItem profile, logout, nafim, tanbin, nabil, aditto;
 	private String f;
 	
 	public Home (String user)
@@ -149,11 +150,29 @@ public class Home implements ActionListener, MouseListener, IHome{
 		users.setForeground(Color.black);
 		users.add(profile);
 		users.add(logout);
+
+		nafim = new JMenuItem("Nafim");
+		nafim.addActionListener(this);
+		nafim.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		aditto = new JMenuItem("Aditto");
+		aditto.addActionListener(this);
+		aditto.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		tanbin = new JMenuItem("Tanbin");
+		tanbin.addActionListener(this);
+		tanbin.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		nabil = new JMenuItem("Nabil");
+		nabil.addActionListener(this);
+		nabil.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		
 		creators = new JMenu("About Us");
 		creators.setCursor(new Cursor(Cursor.HAND_CURSOR));
 		creators.setBorder(new EmptyBorder(0, 10, 0, 10));
 		creators.setForeground(Color.black);
+		creators.add(nafim);
+		creators.add(aditto);
+		creators.add(tanbin);
+		creators.add(nabil);
+		
 
 		
 		menuBar = new JMenuBar();
@@ -186,6 +205,14 @@ public class Home implements ActionListener, MouseListener, IHome{
 		else if(e.getSource()==profile){
 			frame.setVisible(false);
 			new UProfile(f);
+		}else if(e.getSource()== nafim){
+			JOptionPane.showMessageDialog(null, "S M Nafim Niloy\nID: 23-52977-3\nAmerican International University-Bangladesh","Admin Information",JOptionPane.INFORMATION_MESSAGE);
+		}else if(e.getSource()== aditto){
+			JOptionPane.showMessageDialog(null, "Hashamee Al Shahriar Aditto\nID: 22-49941-3\nAmerican International University-Bangladesh","Admin Information",JOptionPane.INFORMATION_MESSAGE);
+		}else if(e.getSource()== tanbin){
+			JOptionPane.showMessageDialog(null, "Md. Tanbin Islam\nID: 23-50657-1\nAmerican International University-Bangladesh","Admin Information",JOptionPane.INFORMATION_MESSAGE);
+		}else if(e.getSource()== nabil){
+			JOptionPane.showMessageDialog(null, "Hasibul Islam Nabil\nID: 22-49909-3\nAmerican International University-Bangladesh","Admin Information",JOptionPane.INFORMATION_MESSAGE);
 		}
 		
 	}

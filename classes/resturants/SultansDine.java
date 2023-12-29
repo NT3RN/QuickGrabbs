@@ -83,7 +83,6 @@ public class SultansDine implements ActionListener,IKacchiBhai{
 		Image image1 = new ImageIcon("icons/kacchiBiriyani.png").getImage();
 		ImageIcon kacchiBiriyaniIcon = new ImageIcon(image1);
 		kacchiBiriyani = new JCheckBox("kacchi Biriyani");
-		//kacchiBiriyani.setFont(new Font("Segoe UI", 1, 10));
 		kacchiBiriyani.setBounds(40, 170, 150, 20);
 		kacchiBiriyani.setFocusable(false);
 		kacchiBiriyani.setForeground(Color.white);
@@ -95,7 +94,6 @@ public class SultansDine implements ActionListener,IKacchiBhai{
 		kacchiLabel = new JLabel(kacchiBiriyaniIcon);
 		kacchiLabel.setBounds(20, 20, 340, 140);
 		frame.add(kacchiLabel);
-		
 		kPrice = new JLabel("Price: 420.99 tk");
 		kPrice.setBounds(220, 170, 150, 20);
 		kPrice.setBackground(Color.black);
@@ -317,7 +315,7 @@ public class SultansDine implements ActionListener,IKacchiBhai{
 					kabsaHyderabadiBiryaniAmount;
 			if (totalAmount!=0)
 			{
-				int x = JOptionPane.showConfirmDialog(null, "Your Bill = "+totalAmount+" tk. Confirm Order?"," Conformation of Oder", 0);
+				int x = JOptionPane.showConfirmDialog(null, "Your Bill = "+totalAmount+" tk. Confirm Order?"," Confirmation of Order", 0);
 				if (x==0) 
 				{
 					frame.setVisible(false);

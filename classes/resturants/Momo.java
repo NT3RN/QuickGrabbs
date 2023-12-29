@@ -314,7 +314,7 @@ public class Momo implements ActionListener, IMomo{
 					bfcAmount;
 			if (totalAmount!=0)
 			{
-				int x = JOptionPane.showConfirmDialog(null, "Your Bill = "+totalAmount+" tk. Confirm Order?"," Conformation of Oder", 0);
+				int x = JOptionPane.showConfirmDialog(null, "Your Bill = "+totalAmount+" tk. Confirm Order?"," Confirmation of Order", 0);
 				if (x==0) 
 				{
 					frame.setVisible(false);
