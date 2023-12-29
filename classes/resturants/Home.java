@@ -28,7 +28,7 @@ public class Home implements ActionListener, MouseListener, IHome{
 	
 	private JFrame frame;
 	
-	private JLabel kacchiBhai;
+	private JLabel sultansDine;
 	private JLabel pizzaBurg;
 	private JLabel chillox;
 	private JLabel momo;
@@ -63,18 +63,18 @@ public class Home implements ActionListener, MouseListener, IHome{
 		pizzaBurg.addMouseListener(this);
 		frame.add(pizzaBurg);
 
-		Image image2 = new ImageIcon("icons/kacchibhai.png").getImage().getScaledInstance(240, 180, Image.SCALE_DEFAULT);
+		Image image2 = new ImageIcon("icons/SultansDine.jpg").getImage().getScaledInstance(240, 180, Image.SCALE_DEFAULT);
 		ImageIcon kacchiBhaiLogo = new ImageIcon(image2);
-		kacchiBhai = new JLabel("Kacchi Bhai");
-		kacchiBhai.setIcon(kacchiBhaiLogo);
-		kacchiBhai.setForeground(Color.CYAN);
-		kacchiBhai.setVerticalTextPosition(JLabel.BOTTOM);
-		kacchiBhai.setHorizontalTextPosition(JLabel.CENTER);
-		kacchiBhai.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		kacchiBhai.setFont(new Font("Grandview",Font.PLAIN,20));
-		kacchiBhai.setBorder(new EmptyBorder(0, 30, 0, 0));
-		kacchiBhai.addMouseListener(this);
-		frame.add(kacchiBhai);
+		sultansDine = new JLabel("Sultan's Dine");
+		sultansDine.setIcon(kacchiBhaiLogo);
+		sultansDine.setForeground(Color.CYAN);
+		sultansDine.setVerticalTextPosition(JLabel.BOTTOM);
+		sultansDine.setHorizontalTextPosition(JLabel.CENTER);
+		sultansDine.setCursor(new Cursor(Cursor.HAND_CURSOR));
+		sultansDine.setFont(new Font("Grandview",Font.PLAIN,20));
+		sultansDine.setBorder(new EmptyBorder(0, 30, 0, 0));
+		sultansDine.addMouseListener(this);
+		frame.add(sultansDine);
 		
 		
 		
@@ -197,10 +197,10 @@ public class Home implements ActionListener, MouseListener, IHome{
 			frame.setVisible(false);
 			new PizzaBurg(f);
 		}
-		else if(e.getSource()==kacchiBhai)
+		else if(e.getSource()==sultansDine)
 		{
 			frame.setVisible(false);
-			new KacchiBhai(f);
+			new SultansDine(f);
 		}
 		else if(e.getSource()==dosLocos)
 		{
@@ -239,9 +239,9 @@ public class Home implements ActionListener, MouseListener, IHome{
 
 	@Override
 	public void mouseEntered(MouseEvent e) {
-		if(e.getSource()==kacchiBhai)
+		if(e.getSource()==sultansDine)
 			{
-			kacchiBhai.setForeground(Color.white);
+			sultansDine.setForeground(Color.white);
 			}
 		
 		else if(e.getSource()==pizzaBurg)
@@ -272,8 +272,8 @@ public class Home implements ActionListener, MouseListener, IHome{
 			
 	@Override
 	public void mouseExited(MouseEvent e) {
-		kacchiBhai.setForeground(Color.black);
-		kacchiBhai.setForeground(Color.black);
+		sultansDine.setForeground(Color.black);
+		sultansDine.setForeground(Color.black);
 		pizzaBurg.setForeground(Color.black);
 		chillox.setForeground(Color.black);
 		momo.setForeground(Color.black);

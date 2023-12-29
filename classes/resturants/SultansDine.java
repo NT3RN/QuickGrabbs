@@ -26,7 +26,7 @@ import classes.payment.Payment;
 import classes.user.ImagePanel;
 import classes.user.Login;
 
-public class KacchiBhai implements ActionListener,IKacchiBhai{
+public class SultansDine implements ActionListener,IKacchiBhai{
 	
 	private JFrame frame;
 	
@@ -69,11 +69,11 @@ public class KacchiBhai implements ActionListener,IKacchiBhai{
 	
 	private String f;
 	
-	public KacchiBhai(String user)
+	public SultansDine(String user)
 	{
 		f=user;
 		
-		frame = new JFrame("KacchiBhai Menu");
+		frame = new JFrame("Sultan's Dine Menu");
 		ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
 		Image background = new ImageIcon("icons/restbackground.png").getImage();
 		frame.setContentPane(new ImagePanel(background));

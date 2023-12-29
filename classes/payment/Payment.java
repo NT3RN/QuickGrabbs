@@ -190,7 +190,7 @@ public class Payment implements ActionListener, IPayment{
 			else if(resturantName=="KacchiBhai")
 			{
 				frame.setVisible(false);
-				new KacchiBhai(f);
+				new SultansDine(f);
 			}
 			else if(resturantName=="DosLocos")
 			{
