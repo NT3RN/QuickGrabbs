@@ -276,7 +276,7 @@ public class PizzaBurg implements ActionListener, IPizzaBurg {
 			}
 			else if (e.getSource()==goBack)
 			{
-				new ResturantName(f);
+				new Home(f);
 				frame.setVisible(false);
 			}
 			

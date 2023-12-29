@@ -16,7 +16,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-import classes.resturants.ResturantName;
+import classes.resturants.Home;
 
 public class UProfile implements ActionListener,IUProfile{
 
@@ -105,7 +105,7 @@ public class UProfile implements ActionListener,IUProfile{
 		if (e.getSource()==previous0)
 		{
 			frame.setVisible(false);
-			new ResturantName(f);
+			new Home(f);
 		}
 		
 	}

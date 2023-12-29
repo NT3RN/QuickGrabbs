@@ -271,7 +271,7 @@ public class TwinPeaks implements ActionListener, ITwinPeaks{
 		}
 		else if (e.getSource()==goBack)
 		{
-			new ResturantName(f);
+			new Home(f);
 			frame.setVisible(false);
 		}
 		else if(e.getSource()==placeOrder)

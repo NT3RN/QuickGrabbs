@@ -273,7 +273,7 @@ public class Login implements ActionListener, Ilogin {
                                     found = true;
                                     if((line = reader.readLine()) != null && line.equals(passwordL)){
                                         frame.setVisible(false);
-                                        new ResturantName(user); //passed User name to next page
+                                        new Home(user); //passed User name to next page
 
                                         break;
                                     } else {

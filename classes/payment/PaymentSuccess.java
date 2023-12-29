@@ -113,7 +113,7 @@ public class PaymentSuccess implements ActionListener, IPaymentSuccess{
 		else if(e.getSource()==home)
 		{
 			frame.setVisible(false);
-			new ResturantName(f);
+			new Home(f);
 		}
 		else if(e.getSource()==recipt)
 		{

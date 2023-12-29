@@ -3,7 +3,7 @@ package interfaces;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 
-public interface IResturantName {
+public interface IHome {
 
 	void mouseClicked(MouseEvent e);
 	void mousePressed(MouseEvent e);

@@ -270,7 +270,7 @@ public class Momo implements ActionListener, IMomo{
 		
 		else if (e.getSource()==goBack)
 		{
-			new ResturantName(f);
+			new Home(f);
 			frame.setVisible(false);
 		}
 		

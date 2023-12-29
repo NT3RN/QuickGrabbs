@@ -272,7 +272,7 @@ public class DosLocos implements ActionListener, IDosLocos {
 		
 		else if (e.getSource()==goBack)
 		{
-			new ResturantName(f);
+			new Home(f);
 			frame.setVisible(false);
 		}
 		else if(e.getSource()==placeOrder)

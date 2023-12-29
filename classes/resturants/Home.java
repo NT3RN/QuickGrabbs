@@ -24,7 +24,7 @@ import javax.swing.border.EmptyBorder;
 
 
 
-public class ResturantName implements ActionListener, MouseListener, IResturantName{
+public class Home implements ActionListener, MouseListener, IHome{
 	
 	private JFrame frame;
 	
@@ -39,7 +39,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 	private JMenuItem profile, logout;
 	private String f;
 	
-	public ResturantName (String user)
+	public Home (String user)
 	{
 		f=user;
 		frame = new JFrame("Available Resturant");
