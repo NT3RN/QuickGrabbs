@@ -1,11 +1,8 @@
 package classes.admin;
 
-
+import classes.user.*;
 
 import javax.swing.*;
-
-import classes.user.Login;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
