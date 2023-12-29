@@ -58,16 +58,10 @@ public class Payment implements ActionListener, IPayment{
 		
 		ImageIcon framelogo = new ImageIcon("icons/framelogo.png");
 		
-		// Image image1 = new ImageIcon("icons/mainIcon.png").getImage().getScaledInstance(300, 450, Image.SCALE_DEFAULT);
-		// ImageIcon mainIcon = new ImageIcon(image1);
 
 		Image background = new ImageIcon("icons/CARDPAYMENT.png").getImage();
 		frame.setContentPane(new ImagePanel(background));
-		
-		// mi = new JLabel(mainIcon);
-		// mi.setBounds(20, 10, 300, 450);
-		// frame.add(mi);
-		
+
 		
 		cyp = new JLabel("Complete Your Payment");
 		cyp.setForeground(Color.BLACK);
@@ -245,8 +239,7 @@ public class Payment implements ActionListener, IPayment{
 			{
 				try 
 				{
-					// long m = Long.parseLong(b);
-					// long n = Long.parseLong(d);
+
 					
 					if(b.length()>16)
 					{
@@ -265,9 +258,9 @@ public class Payment implements ActionListener, IPayment{
 					}
 					try
 					{
-						File newfile = new File("data\\Last2.txt"); 
+						File newfile = new File("data\\temp\\Last2.txt"); 
 						newfile.createNewFile();
-						FileWriter writeFile = new FileWriter("data\\Last2.txt");
+						FileWriter writeFile = new FileWriter("data\\temp\\Last2.txt");
 						
 						writeFile.write("Name on Card : "+a+".\nCard Number :"+b+
 								".\nValid On : "+c+".\nCVV Code : "+d+".");

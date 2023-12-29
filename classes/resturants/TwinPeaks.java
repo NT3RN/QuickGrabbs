@@ -321,9 +321,9 @@ public class TwinPeaks implements ActionListener, ITwinPeaks{
 					new Payment(totalAmount, "TwinPeaks",f);
 					
 					try {
-						File newfile = new File("data\\Last.txt"); 
+						File newfile = new File("data\\temp\\Last.txt"); 
 						newfile.createNewFile();
-						FileWriter file = new FileWriter("data\\Last.txt");
+						FileWriter file = new FileWriter("data\\temp\\Last.txt");
 						
 						file.write("Beef Steak--- "+a+" Piece----"+sAmount+" tk."
 						+"\nChicken Nuggets----"+b+" Piece---"+cnAmount+" tk."

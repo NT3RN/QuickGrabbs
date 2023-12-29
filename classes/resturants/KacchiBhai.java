@@ -324,9 +324,9 @@ public class KacchiBhai implements ActionListener,IKacchiBhai{
 					 new Payment(totalAmount, "KacchiBhai",f);
 					
 					try {
-						File newfile = new File("data\\Last.txt"); 
+						File newfile = new File("data\\temp\\Last.txt"); 
 						newfile.createNewFile();
-						FileWriter file = new FileWriter("data\\Last.txt");
+						FileWriter file = new FileWriter("data\\temp\\Last.txt");
 						
 						file.write("kacchi Biriyani--- "+a+" Packet----"+kacchiBiriyaniAmount+" tk."
 						+"\nTehri----"+b+" Packet---"+tehriAmount+" tk."

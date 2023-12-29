@@ -322,9 +322,9 @@ public class DosLocos implements ActionListener, IDosLocos {
 					new Payment(totalAmount, "DosLocos",f);
 					
 					try {
-						File newfile = new File("data\\Last.txt"); 
+						File newfile = new File("data\\temp\\Last.txt"); 
 						newfile.createNewFile();
-						FileWriter file = new FileWriter("data\\Last.txt");
+						FileWriter file = new FileWriter("data\\temp\\Last.txt");
 						
 						file.write("Spicy Cheese Double Beef Burrito--- "+a+" Piece----"+scdbbAmount+" tk."
 						+"\nBarbecue Chicken Burrito----"+b+" Piece---"+bcbAmount+" tk."

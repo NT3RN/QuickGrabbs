@@ -58,20 +58,20 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		kacchiBhai.setVerticalTextPosition(JLabel.BOTTOM);
 		kacchiBhai.setHorizontalTextPosition(JLabel.CENTER);
 		kacchiBhai.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		kacchiBhai.setFont(new Font("Lucida Console",Font.PLAIN,20));
+		kacchiBhai.setFont(new Font("Grandview",Font.PLAIN,20));
 		kacchiBhai.addMouseListener(this);
 		frame.add(kacchiBhai);
 		
 		
 		Image image2 = new ImageIcon("icons/pizzaburg.jpeg").getImage().getScaledInstance(240, 180, Image.SCALE_SMOOTH);
 		ImageIcon pizzaBurgLogo = new ImageIcon(image2);
-		pizzaBurg = new JLabel("Pizza Burg");
+		pizzaBurg = new JLabel("PizzaBurg");
 		pizzaBurg.setIcon(pizzaBurgLogo);
 		pizzaBurg.setForeground(Color.CYAN);
 		pizzaBurg.setVerticalTextPosition(JLabel.BOTTOM);
 		pizzaBurg.setHorizontalTextPosition(JLabel.CENTER);
 		pizzaBurg.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		pizzaBurg.setFont(new Font("Lucida Console",Font.PLAIN,20));
+		pizzaBurg.setFont(new Font("Grandview",Font.PLAIN,20));
 		pizzaBurg.addMouseListener(this);
 		frame.add(pizzaBurg);
 		
@@ -84,7 +84,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		chillox.setVerticalTextPosition(JLabel.BOTTOM);
 		chillox.setHorizontalTextPosition(JLabel.CENTER);
 		chillox.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		chillox.setFont(new Font("Lucida Console",Font.PLAIN,20));
+		chillox.setFont(new Font("Grandview",Font.PLAIN,20));
 		chillox.addMouseListener(this);
 		frame.add(chillox);
 		
@@ -97,7 +97,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		momo.setVerticalTextPosition(JLabel.BOTTOM);
 		momo.setHorizontalTextPosition(JLabel.CENTER);
 		momo.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		momo.setFont(new Font("Lucida Console",Font.PLAIN,20));
+		momo.setFont(new Font("Grandview",Font.PLAIN,20));
 		momo.addMouseListener(this);
 		frame.add(momo);
 
@@ -110,7 +110,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		twinPeaks.setVerticalTextPosition(JLabel.BOTTOM);
 		twinPeaks.setHorizontalTextPosition(JLabel.CENTER);
 		twinPeaks.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		twinPeaks.setFont(new Font("Lucida Console",Font.PLAIN,20));
+		twinPeaks.setFont(new Font("Grandview",Font.PLAIN,20));
 		twinPeaks.addMouseListener(this);
 		frame.add(twinPeaks);
 		
@@ -123,7 +123,7 @@ public class ResturantName implements ActionListener, MouseListener, IResturantN
 		dosLocos.setVerticalTextPosition(JLabel.BOTTOM);
 		dosLocos.setHorizontalTextPosition(JLabel.CENTER);
 		dosLocos.setCursor(new Cursor(Cursor.HAND_CURSOR));
-		dosLocos.setFont(new Font("Lucida Console",Font.PLAIN,20));
+		dosLocos.setFont(new Font("Grandview",Font.PLAIN,20));
 		dosLocos.addMouseListener(this);
 		frame.add(dosLocos);
 

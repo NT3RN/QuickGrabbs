@@ -34,7 +34,7 @@ public class PaymentSuccess implements ActionListener, IPaymentSuccess{
 	{
 		f=user;
 		
-		frame= new JFrame();
+		frame= new JFrame("Payment Successfull");
 
 		Image background = new ImageIcon("icons/PaymentSuccess.png").getImage();
 		frame.setContentPane(new ImagePanel(background));
@@ -120,7 +120,7 @@ public class PaymentSuccess implements ActionListener, IPaymentSuccess{
 			try 
 			{
 
-			File newfile = new File("data\\Last.txt"); 
+			File newfile = new File("data\\temp\\Last.txt"); 
 			Scanner sc = new Scanner(newfile);
 			
 			String line1 = null;
@@ -143,7 +143,7 @@ public class PaymentSuccess implements ActionListener, IPaymentSuccess{
 
 			}
 			sc.close();  
-			File newfile2 = new File("data\\Last2.txt");
+			File newfile2 = new File("data\\temp\\Last2.txt");
 			Scanner sc2 = new Scanner(newfile2);
 			while(sc2.hasNext())
 			{

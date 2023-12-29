@@ -322,9 +322,9 @@ public class PizzaBurg implements ActionListener, IPizzaBurg {
 						new Payment(totalAmount, "PizzaBurg",f);
 						
 						try {
-								File newfile = new File("data\\Last.txt"); 
+								File newfile = new File("data\\temp\\Last.txt"); 
 								newfile.createNewFile();
-								FileWriter file = new FileWriter("data\\Last.txt");
+								FileWriter file = new FileWriter("data\\temp\\Last.txt");
 								
 								file.write("Double Cheese Pizza--- "+a+" Piece----"+doubleCheesePizzaAmount+" tk."
 								+"\nThin Crust Pizza----"+b+" Piece---"+thinCrustPizzaAmount+" tk."
