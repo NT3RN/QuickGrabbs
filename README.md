@@ -1,2 +1,1 @@
-QuickGrabbs - A food ordering application using java
-OOP 1 project
+QuickGrabbs - A food ordering GUI application using java
